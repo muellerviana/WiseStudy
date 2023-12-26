@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admins_backoffice do
+    get 'dashboard/index'
+  end
   # Defines the root path route ("/")
   root "site/home#index"
   namespace :site do
