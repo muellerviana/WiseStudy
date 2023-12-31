@@ -4,5 +4,4 @@ class AdminsBackoffice::TopbarComponent < ViewComponent::Base
   def initialize(logo)
     @logo = logo
   end
-
 end
