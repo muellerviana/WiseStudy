@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :admins
 
   namespace :admins_backoffice do
+    get 'articles/index'
     get 'dashboard/index'
   end
 
