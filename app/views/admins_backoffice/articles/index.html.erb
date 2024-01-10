@@ -1,6 +1,25 @@
-<div class="h-screen bg-white p-5 m-5">
-  <% @articles.each do |article|%>
-    <h1 class="text-4xl"><%= article.title%></h1>
-    <%= article.content %>
-  <% end %>
+<div class="container mx-auto mt-5">
+  <table class="min-w-full bg-white border border-gray-300">
+    <thead>
+      <tr>
+        <th class="py-2 px-4 border-b">ID</th>
+        <th class="py-2 px-4 border-b">Title</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <% @articles.each do |article| %>
+      <tr>
+        <td class="py-2 px-4 border-b"><%= article.id %></td>
+        <td class="py-2 px-4 border-b">     
+          <%= link_to article.title, admins_backoffice_article_path(article), class: 'hover:underline' %>
+        </td>
+        <td class="py-2 px-4 border-b">
+          <button class="bg-blue-500 text-white py-1 px-2 rounded">Edit</button>
+          <button class="bg-red-500 text-white py-1 px-2 rounded">Delete</button>
+        </td>
+      </tr>
+      <% end %>
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
 </div>
