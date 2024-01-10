@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :admins_backoffice do
     get 'articles/index'
     get 'dashboard/index'
+    resources :articles
   end
 
   namespace :site do
