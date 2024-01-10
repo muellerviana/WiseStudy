@@ -1,1 +1,7 @@
-<div>Add Button template here</div>
+<div>
+  <%= button_tag class: 'bg-blue-600' do %>
+    <%= link_to @href, class: 'flex items-center' do %>
+      <%= @text %>
+    <% end %>
+  <% end %>
+</div>
