@@ -22,13 +22,13 @@ RSpec.describe Article, type: :model do
   end
 
   it "can update the article title" do
-    article = Article.create(title: "Original Title", content: "Lorem ipsum")
+    article = Article.create(title: "Original Title", author:"Jhon Doe", content: "Lorem ipsum")
     article.update(title: "Updated Title")
     expect(article.reload.title).to eq("Updated Title")
   end
 
   it "can destroy the article" do
-    article = Article.create(title: "To be destroyed", content: "Lorem ipsum")
+    article = Article.create(title: "To be destroyed", author:"Jhon Doe", content: "Lorem ipsum")
     expect { article.destroy }.to change { Article.count }.by(-1)
   end
 end
