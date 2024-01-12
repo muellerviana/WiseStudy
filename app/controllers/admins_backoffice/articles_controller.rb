@@ -7,6 +7,19 @@ class AdminsBackoffice::ArticlesController < AdminsBackofficeController
     @article = Article.find(params[:id])
   end
 
+  def new
+    @article = Article.new
+  end
+
+  def create
+    @article = Article.new(article_params)
+
+    if @article.save
+      redirect_to admins_backoffice_articles_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   def edit
     @article = Article.find(params[:id])
@@ -22,19 +35,11 @@ class AdminsBackoffice::ArticlesController < AdminsBackofficeController
     end
   end
 
-  def new
-    @article = Article.new
-  end
+  def destroy
+    @article = Article.find(params[:id])
 
-
-  def create
-    @article = Article.new(article_params)
-
-    if @article.save
-      redirect_to admins_backoffice_articles_path
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @article.destroy
+    redirect_to admins_backoffice_articles_path, status: :see_other
   end
 
   private

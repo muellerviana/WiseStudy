@@ -13,10 +13,17 @@
           <%= link_to article.title, admins_backoffice_article_path(article), class: 'hover:underline' %>
         </td>
         <td class="py-2 px-4 border-b flex">
-          <%= link_to "Edit", edit_admins_backoffice_article_path(article), class: "bg-blue-500 text-white py-1 px-2 rounded mx-1" %>
+          <%= link_to "Edit", edit_admins_backoffice_article_path(article), class: 
+                    "bg-blue-500 text-white py-1 px-2 rounded mx-1" 
+                    %>
 
-          <%= button_to "Delete", admins_backoffice_article_path(article), method: :delete, data: { confirm: "Are you sure?" },
-                                                                             class: "bg-red-500 text-white  py-1 px-2 rounded" %>
+
+          <%= link_to "Destroy", admins_backoffice_article_path(article), 
+                  class: "bg-red-500 text-white  py-1 px-2 rounded",
+                  data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Do you really want to destroy the article  '#{article.title}'?"
+                  } %>
         </td>
       </tr>
       <% end %>
