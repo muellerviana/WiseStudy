@@ -12,9 +12,11 @@
         <td class="py-2 px-4 border-b">     
           <%= link_to article.title, admins_backoffice_article_path(article), class: 'hover:underline' %>
         </td>
-        <td class="py-2 px-4 border-b">
-          <button class="bg-blue-500 text-white py-1 px-2 rounded">Edit</button>
-          <button class="bg-red-500 text-white py-1 px-2 rounded">Delete</button>
+        <td class="py-2 px-4 border-b flex">
+          <%= link_to "Edit", edit_admins_backoffice_article_path(article), class: "bg-blue-500 text-white py-1 px-2 rounded mx-1" %>
+
+          <%= button_to "Delete", admins_backoffice_article_path(article), method: :delete, data: { confirm: "Are you sure?" },
+                                                                             class: "bg-red-500 text-white  py-1 px-2 rounded" %>
         </td>
       </tr>
       <% end %>
