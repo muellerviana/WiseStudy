@@ -7,8 +7,19 @@ class AdminsBackoffice::ArticlesController < AdminsBackofficeController
     @article = Article.find(params[:id])
   end
 
+
   def edit
     @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to admins_backoffice_article_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def new
