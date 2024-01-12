@@ -15,8 +15,9 @@
     <%= render 'layouts/admins_backoffice/topbar'%>
     
     <div class="flex">
-    <%= render 'layouts/admins_backoffice/sidebar'%>
-    <%= render 'layouts/admins_backoffice/content'%>
+      <%= render 'layouts/admins_backoffice/sidebar'%>
+      <%= yield %>
+
     </div>
   </body>
 </html>
