@@ -45,6 +45,6 @@ class AdminsBackoffice::ArticlesController < AdminsBackofficeController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, :author)
+    params.require(:article).permit(:title, :content, :author, :image_url)
   end
 end
