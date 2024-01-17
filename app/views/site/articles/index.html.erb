@@ -1,4 +1,33 @@
-<div>
-  <h1 class="font-bold text-4xl">Site::Articles#index</h1>
-  <p>Find me in app/views/site/articles/index.html.erb</p>
-</div>
+<nav id="navWide" class="dark:bg-gray-700">
+  <div class="max-w-screen-xl px-10 py-3 mx-auto">
+    <div class="flex items-center">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 gap-4">
+        <% @articles.each do |article| %>
+          <div class="text-center max-w-sm overflow-hidden shadow-lg">
+            <% if article.image_url.present? %>
+              <%= image_tag(article.image_url, class: "w-full") %>
+            <% else %>
+              <%= image_tag("sample.jpg", class: "w-full") %>
+            <% end %>
+
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2"><%= link_to article.title, site_article_path(article), class:"text-gray-600 hover:text-Gray-800" %></div>
+              <p class="text-gray-700 text-base">
+                <%= article.title %>
+              </p>
+            </div>
+
+            <div class="px-6 py-4 ">
+              <p class="text-pink-700 text-base"> Author Here </p>
+            </div>
+
+            <div class="px-6 pt-4 pb-2 [&>*]:text-xs">
+              <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+              <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+            </div>
+          </div>
+        <% end%>
+      </div>
+    </div>
+  </div>
+</nav>
