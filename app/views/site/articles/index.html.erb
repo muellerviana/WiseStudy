@@ -13,12 +13,14 @@
             <div class="px-6 py-4">
               <div class="font-bold text-xl mb-2"><%= link_to article.title, site_article_path(article), class:"text-gray-600 hover:text-Gray-800" %></div>
               <p class="text-gray-700 text-base">
-                <%= article.title %>
+                <%= article.description %>
               </p>
             </div>
 
             <div class="px-6 py-4 ">
-              <p class="text-pink-700 text-base"> Author Here </p>
+              <p class="text-pink-700 text-base">
+                <%= article.author %>
+              </p>
             </div>
 
             <div class="px-6 pt-4 pb-2 [&>*]:text-xs">

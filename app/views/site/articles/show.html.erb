@@ -1,0 +1,11 @@
+<div class="max-w-7xl mx-auto px-2 sm:px-4 lg:divide-y lg:divide-gray-200 lg:px-8">
+  <div class="relative z-10 px-2 flex lg:px-0">
+    <div class="text-gray-800">
+      <h1 class="text-4xl"><%= @article.title %></h1>
+      <p class="text-xl my-2"><%= @article.description %></p>
+      <div class="my-2"><%= @article.content %></div>
+      <p class="my-2"><%= @article.author %></p>
+      <p class="text-xs">Last updated: <%= @article.updated_at %></p>
+    </div>
+  </div>
+</div>
