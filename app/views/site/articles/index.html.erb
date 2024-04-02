@@ -4,8 +4,8 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 gap-4">
         <% @articles.each do |article| %>
           <div class="text-center max-w-sm overflow-hidden shadow-lg">
-            <% if article.image_url.present? %>
-              <%= image_tag(article.image_url, class: "w-full") %>
+            <% if article.image.url.present? %>
+              <%= image_tag(article.image.url, class: "w-full") %>
             <% else %>
               <%= image_tag("sample.jpg", class: "w-full") %>
             <% end %>

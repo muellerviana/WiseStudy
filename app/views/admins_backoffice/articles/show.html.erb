@@ -4,4 +4,7 @@
 
   <p><%= @article.content %> <p>
   <p><%= @article.author %></p>
+
+  <%= image_tag(@article.image.url, alt: 'Image') if @article.image? %>
+
 </div>

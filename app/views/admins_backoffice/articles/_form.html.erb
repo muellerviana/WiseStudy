@@ -25,9 +25,9 @@
 
 
   <div>
-    <%= form.label :image_url %><br>
-    <%= form.text_field :image_url %><br>
-    <% @article.errors.full_messages_for(:image_url).each do |message| %>
+    <%= form.label :image %><br>
+    <%= form.file_field :image %><br>
+    <% @article.errors.full_messages_for(:image).each do |message| %>
       <div class="text-red-500"><%= message %></div>
     <% end %>
   </div>

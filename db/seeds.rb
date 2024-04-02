@@ -2,6 +2,10 @@
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
+
+Admin.create( email: "test@test.com",
+              password: "Test123"
+)
 Article.create(title: "A oração dominical",
                description: "Jesus ensina a orar",
                content: "
@@ -21,4 +25,4 @@ Article.create(title: "A oração dominical",
                
                <p>Mateus 6:9-15</p", 
                author: "Jesus Cristo",
-               image_url: "sample.jpg")
+               image: "sample.jpg")
