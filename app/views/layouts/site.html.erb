@@ -12,9 +12,7 @@
   </head>
 
   <body>
-  <%= render(TopBarComponent.new(logo: "my title")) do %>
-    Hello, World!
-  <% end %>
+  <%= render(TopBarComponent.new(title: "WordWise"))%>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
