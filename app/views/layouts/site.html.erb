@@ -12,10 +12,9 @@
   </head>
 
   <body>
-    <%= render(TopBarComponent.new(title: "WordWise"))%>
-    <%= render(MenuBarComponent.new()) %>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+    <%= render 'layouts/site/topbar'%>
+    <%= render 'layouts/site/menu'%>
+    <%= yield %>
+    <%# <%= render 'layouts/site/footer' %> %>
   </body>
 </html>
