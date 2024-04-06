@@ -12,7 +12,8 @@
   </head>
 
   <body>
-  <%= render(TopBarComponent.new(title: "WordWise"))%>
+    <%= render(TopBarComponent.new(title: "WordWise"))%>
+    <%= render(MenuBarComponent.new()) %>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
