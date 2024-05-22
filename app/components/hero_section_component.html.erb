@@ -1,6 +1,6 @@
 <div class="relative">
-  <div class="absolute inset-0">
-    <img class="w-full h-full object-cover" src="<%= @folder_link %>" alt="">
+  <div class="absolute inset-0"> 
+    <%= image_tag(@folder_link, class: @css_classes) %>
     <div class="absolute inset-0 bg-indigo-500 mix-blend-multiply" aria-hidden="true"></div>
   </div>
   <div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
