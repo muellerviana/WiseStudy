@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   namespace :site do
     get 'home/index'
   end
+
+  namespace :admins_dashboard do
+    resources 'home'
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
