@@ -13,7 +13,13 @@
 
   <body>
     <%= render 'layouts/site/topbar'%>
-    <%= render 'layouts/admins_dashboard/sidebar' %>
-    <%= yield %>
+    <div class="flex">
+      <div class="">
+        <%= render 'layouts/admins_dashboard/sidebar' %>
+      </div>
+      <div class="">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
