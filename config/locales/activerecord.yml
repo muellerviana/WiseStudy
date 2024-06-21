@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    models:
+      article: Article
+    attributes:
+      article:
+        id: ID
+        title: Title
+        description: Description
+        body: Body
+        image_url: Img URL
+

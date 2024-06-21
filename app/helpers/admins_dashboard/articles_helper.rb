@@ -1,0 +1,2 @@
+module AdminsDashboard::ArticlesHelper
+end
