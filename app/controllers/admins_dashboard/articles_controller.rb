@@ -20,4 +20,17 @@ class AdminsDashboard::ArticlesController < AdminsDashboardController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @article = Article.find(params[:id])
+
+    @article.destroy
+    redirect_to admins_dashboard_articles_path, status: :see_other
+  end
+
+  private
+
+  def article_params
+    params.require(:article).permit(:title, :content, :author, :image_url)
+  end
 end

@@ -19,8 +19,10 @@
           } %>
           <%= row.with_cell {  link_to 'new', new_admins_dashboard_article_path
           } %>
-          <%= row.with_cell {  link_to 'delete', "#"
-          } %>
+         <%= row.with_cell do %>
+          <%= link_to 'delete', admins_dashboard_article_path(article.id), data: { turbo_method: :delete } %>
+         <% end %> 
+
 
         <% end %>
       <% end %>
