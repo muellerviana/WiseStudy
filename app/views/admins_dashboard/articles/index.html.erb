@@ -2,7 +2,6 @@
   <% if @articles.present? %>
     <%= render TableComponent.new do |component| %>
       <%= component.with_header(titles: [
-        # t('activerecord.models.article'),
         t('activerecord.attributes.article.id'),
         t('activerecord.attributes.article.title'),
         t('activerecord.attributes.article.description'),
@@ -16,6 +15,13 @@
           <%= row.with_cell { article.title } %>
           <%= row.with_cell { article.description } %>
           <%= row.with_cell { article.image_url } %>
+          <%= row.with_cell {  link_to 'see', admins_dashboard_article_path(article.id)
+          } %>
+          <%= row.with_cell {  link_to 'new', new_admins_dashboard_article_path
+          } %>
+          <%= row.with_cell {  link_to 'delete', "#"
+          } %>
+
         <% end %>
       <% end %>
     <% end %>
