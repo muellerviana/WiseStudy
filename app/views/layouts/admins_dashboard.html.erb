@@ -11,15 +11,14 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="m-0 flex flex-col min-h-screen">
     <%= render 'layouts/site/topbar'%>
-    <div class="flex">
-      <div class="">
-        <%= render 'layouts/admins_dashboard/sidebar' %>
-      </div>
-      <div class="">
-        <%= yield %>
-      </div>
-    </div>
+    
+    <div class="flex flex-1 w-full bg-gray-50">
+    <%= render(SidebarMenuComponent.new())%>
+
+    <main class="py-10 flex-grow">  
+      <%= yield %>
+    </main>
   </body>
 </html>

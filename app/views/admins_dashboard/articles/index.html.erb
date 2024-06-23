@@ -1,4 +1,4 @@
-<div class="bg-gray-50">  
+<div class="">  
   <% if @articles.present? %>
     <%= render TableComponent.new do |component| %>
       <%= component.with_header(titles: [
@@ -29,10 +29,6 @@
     <% end %>
 
   <% else %>
-
-
-
-  <%= render EmptyListComponent.new() %>
-
+    <%= render EmptyListComponent.new() %>
   <% end %>
 </div>
