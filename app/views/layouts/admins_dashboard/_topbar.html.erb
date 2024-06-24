@@ -1,1 +1,3 @@
-<%= render(TopBarComponent.new(title: "WordWise"))%>
+<%= render TopBarComponent.new() do |component| %>
+  <%= component.with_logotype(title: "WordWise Admins Dashboard ") %>
+<% end %>
