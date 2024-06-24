@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class TopBarComponent < ViewComponent::Base
-  def initialize(title:)
-    @title = title
-  end
+  renders_one :logotype, LogotypeComponent
+  renders_one :search_bar, SearchBarComponent
+  renders_one :social_network, SocialNetworksComponent
 end
