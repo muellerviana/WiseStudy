@@ -15,7 +15,7 @@ class AdminsDashboard::ArticlesController < AdminsDashboardController
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to admins_backoffice_articles_path
+      redirect_to admins_dashboard_articles_path
     else
       render :new, status: :unprocessable_entity
     end
