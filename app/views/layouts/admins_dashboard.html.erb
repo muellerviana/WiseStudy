@@ -15,10 +15,11 @@
     <%= render 'layouts/admins_dashboard/topbar'%>
     
     <div class="flex flex-1 w-full bg-gray-50">
-    <%= render(SidebarMenuComponent.new())%>
-
-    <main class="py-10 flex-grow">  
-      <%= yield %>
-    </main>
+      <%= render(SidebarMenuComponent.new())%>
+    
+      <main class="p-6 flex-grow">  
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>
