@@ -1,5 +1,11 @@
 <div class="">  
   <% if @articles.present? %>
+    <div class="flex">
+      <div class="ml-auto">
+        <%= render ButtonComponent.new(text:"New Article") %>
+      </div>
+    </div>
+
     <%= render TableComponent.new do |component| %>
       <%= component.with_header(titles: [
         t('activerecord.attributes.article.id'),
@@ -26,6 +32,10 @@
   <% end %>
 
   <% else %>
-    <%= render EmptyListComponent.new() %>
+    <%= render EmptyListComponent.new() do |component| %>
+      <%= component.with_button do %>
+        <%= render ButtonComponent.new(text: "Create Article") %>
+      <% end %>
+    <% end %>
   <% end %>
 </div>
