@@ -2,8 +2,18 @@
 
 <%= form_with(model: [:admins_dashboard, @article ]) do |form| %>
   <div>
+    <%= form.label :image_url %><br>
+    <%= form.text_field :image_url %>
+  </div>
+
+  <div>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
   </div>
 
   <div>
