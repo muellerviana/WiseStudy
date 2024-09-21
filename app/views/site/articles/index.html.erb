@@ -1,5 +1,5 @@
-<%= @articles.each do |article| %>
-  <%= article.title %>
-  <%= article.description %>
-  <%= article.body %>
-<% end %>
+<div class="w-full h-full items-center grid grid-cols-4 gap-4">
+  <% @articles.each do |article| %>
+    <%= render(CardComponent.new(title: article.title, body: article.description)) %>
+  <% end %>
+</div>
