@@ -1,4 +1,4 @@
 <%= render TopBarComponent.new() do |component| %>
   <%= component.with_logotype(title: "WordWise Admins Dashboard ") %>
-  <%= component.with_user_actions() %>
+  <%= component.with_user_actions(text: current_admin.email) %>
 <% end %>
