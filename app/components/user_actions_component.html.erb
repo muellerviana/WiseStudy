@@ -1,11 +1,6 @@
 <div class="lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center block ">
   <div><%= @text %></div> |
   <div>
-    <%= render LinkComponent.new(
-      text: "sign out", 
-      url: destroy_admin_session_path, 
-      method: :delete, 
-      confirm: "We are gong to miss you, are you sure?"
-    ) %>
+    <%= button_to "sign out", destroy_admin_session_path, form: { data: { turbo_confirm: "Are you sure?" } }, method: :delete %>
   </div>
 </div>
