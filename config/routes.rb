@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admins
   namespace :site do
     get 'home/index'
-    resources :articles, only: [:index]
+    resources :articles
   end
 
   namespace :admins_dashboard do

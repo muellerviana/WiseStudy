@@ -1,7 +1,9 @@
  <div class="px-16 py-4"> 
 <div class="w-full h-full items-center md:grid grid-cols-5 gap-4">
   <% @articles.each do |article| %>
-    <%= render(CardComponent.new(title: article.title, body: article.description)) %>
+    <%= render(CardComponent.new(title: article.title, 
+                                 body: article.description, 
+                                 link: site_article_path(article))) %>
   <% end %>
 </div>
  </div>

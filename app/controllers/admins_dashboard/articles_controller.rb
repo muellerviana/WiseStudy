@@ -21,6 +21,21 @@ class AdminsDashboard::ArticlesController < AdminsDashboardController
     end
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to admins_dashboard_articles_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @article = Article.find(params[:id])
 
