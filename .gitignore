@@ -41,5 +41,5 @@
 !/app/assets/builds/.keep
 
 #fly deploy
-fly.toml
 .github/workflows/fly-deploy.yml
+fly.toml
