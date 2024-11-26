@@ -43,3 +43,6 @@
 #fly deploy
 .github/workflows/fly-deploy.yml
 fly.toml
+
+#ignore data related files
+db/schema.rb
