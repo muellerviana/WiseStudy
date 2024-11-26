@@ -3,10 +3,10 @@
 <%= form_with(model: [:admins_dashboard, @article ]) do |form| %>
 
   <div>
-    <%= form.label :image_url %><br>
-    <%= form.text_field :image_url, class: "form-control #{'is-invalid' if @article.errors[:image_url].any?}" %>
-    <% if @article.errors[:image_url].any? %>
-      <div class="text-red-600"><%= @article.errors[:image_url].first %></div>
+    <%= form.label :article_cover %><br>
+    <%= form.file_field :article_cover, class: "form-control #{'is-invalid' if @article.errors[:article_cover].any?}" %>
+    <% if @article.errors[:article_cover].any? %>
+      <div class="text-red-600"><%= @article.errors[:article_cover].first %></div>
     <% end %>
   </div>
 

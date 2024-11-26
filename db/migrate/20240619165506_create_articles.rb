@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration[7.1]
       t.string :title
       t.string :description
       t.text :body
-      t.string :image_url
+      t.string :article_cover
 
       t.timestamps
     end

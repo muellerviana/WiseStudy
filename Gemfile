@@ -77,6 +77,12 @@ group :test do
   gem "selenium-webdriver"
 end
 
+#database
+gem 'carrierwave', '~> 3.0', '>= 3.0.7'
+
+#security
 gem "devise", "~> 4.9"
 
+
+#other
 gem "dockerfile-rails", ">= 1.6", :group => :development

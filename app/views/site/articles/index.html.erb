@@ -3,7 +3,8 @@
   <% @articles.each do |article| %>
     <%= render(CardComponent.new(title: article.title, 
                                  body: article.description, 
-                                 link: site_article_path(article))) %>
+                                 link: site_article_path(article),
+                                 image: article.article_cover.url)) %>
   <% end %>
 </div>
  </div>
