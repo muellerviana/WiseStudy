@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+ .toast {
+  animation: slideIn 0.5s ease-out, fadeOut 0.5s ease-in 2.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
