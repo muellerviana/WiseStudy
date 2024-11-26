@@ -11,12 +11,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="dark:bg-gray-800 dark:border-gray-700 dark:text-gray-50">
-    <h1 class="dark:text-white m-8 text-3xl text-center">Word Wise</h1>
-    <main class="container mx-auto mt-28 px-5 flex ">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
-    </main>
-  </body>
+  <body class="dark:bg-gray-800 dark:border-gray-700 dark:text-gray-50" data-controller="toast" data-toast-notice="<%= j notice %>" data-toast-alert="<%= j alert %>">
+  <div data-toast-target="container" class="fixed top-4 right-4 space-y-4 z-50"></div>
+
+  <h1 class="dark:text-white m-8 text-3xl text-center">Word Wise</h1>
+  <main class="container mx-auto mt-28 px-5 flex">
+    <%= yield %>
+  </main>
+</body>
+
 </html>
