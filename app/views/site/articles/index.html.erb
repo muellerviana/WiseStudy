@@ -1,10 +1,10 @@
- <div class="px-16 py-4"> 
-<div class="w-full h-full items-center md:grid grid-cols-5 gap-4">
-  <% @articles.each do |article| %>
-    <%= render(CardComponent.new(title: article.title, 
-                                 body: article.description, 
-                                 link: site_article_path(article),
-                                 image: article.article_cover.url || "https://t4.ftcdn.net/jpg/06/71/92/37/360_F_671923740_x0zOL3OIuUAnSF6sr7PuznCI5bQFKhI0.jpg")) %>
-  <% end %>
+<div class="px-16 py-4">
+  <div class="grid gap-4 w-full h-full items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+    <% @articles.each do |article| %>
+      <%= render(CardComponent.new(title: article.title, 
+                                   body: article.description, 
+                                   link: site_article_path(article),
+                                   image: article.article_cover.url || "https://t4.ftcdn.net/jpg/06/71/92/37/360_F_671923740_x0zOL3OIuUAnSF6sr7PuznCI5bQFKhI0.jpg")) %>
+    <% end %>
+  </div>
 </div>
- </div>
