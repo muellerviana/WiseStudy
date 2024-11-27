@@ -4,7 +4,7 @@
     <%= render(CardComponent.new(title: article.title, 
                                  body: article.description, 
                                  link: site_article_path(article),
-                                 image: article.article_cover.url)) %>
+                                 image: article.article_cover.url || "https://t4.ftcdn.net/jpg/06/71/92/37/360_F_671923740_x0zOL3OIuUAnSF6sr7PuznCI5bQFKhI0.jpg")) %>
   <% end %>
 </div>
  </div>
