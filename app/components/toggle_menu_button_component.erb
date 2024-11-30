@@ -10,7 +10,7 @@
 <nav>
   <div class="bg-gray-600 max-w-64 shaddow-red-300 shadow-3lg hidden lg:hidden absolute top-0 left-0 z-10 dark:bg-gray-900 dark:border-gray-50 shadow-lg w-full" data-toggleable-target="toggleable">
    <div class="items-center grid-cols-6 gap-8">
-          <ul class="flex flex-row font-medium mt-0 hover:bg-gray-500  space-x-8 rtl:space-x-reverse text-sm">
+          <ul class="flex flex-row font-medium mt-0 hover:bg-gray-500 hover:dark:bg-gray-600 space-x-8 rtl:space-x-reverse text-sm">
               <li>
                   <%= link_to t('home'), root_path,
                     class:"text-gray-50  block py-2 pl-3 pr-4  rounded md:hover:bg-transparent
@@ -19,7 +19,7 @@
                   %>
               </li>
           </ul>
-          <ul class="flex flex-row font-medium mt-0 hover:bg-gray-500 space-x-8 rtl:space-x-reverse text-sm">
+          <ul class="flex flex-row font-medium mt-0 hover:bg-gray-500 hover:dark:bg-gray-600 space-x-8 rtl:space-x-reverse text-sm">
               <li>
                   <%= link_to t('articles'), site_articles_path,
                     class:"text-gray-50  block py-2 pl-3 pr-4 rounded  md:hover:bg-transparent
