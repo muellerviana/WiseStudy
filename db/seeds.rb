@@ -8,9 +8,12 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+#create task to clean an rebuild database
+#rails db:drop
 
 author1 = Author.create(name: "Tolkien", last_name: "J.R", birth_date:('1982-01-01'))
 author2 = Author.create(name: "Lewis", last_name: "C.S", birth_date:('1999-01-12'))
+author3 = Author.create(name: "Müller", last_name: "Viana", birth_date:('31-07-1994'))
 
 book = Book.create(title: "Book Title")
 
@@ -18,3 +21,6 @@ book.authors << author1
 book.authors << author2
 
 book.save!
+
+book2 = Book.create(title: "A casa de Papel")
+book2.authors << author3
