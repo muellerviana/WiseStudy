@@ -1,0 +1,67 @@
+
+
+<%= form_with(model: [:admins_dashboard, @book ], class:"p-4 border rounded-sm shadow-md") do |form| %>
+
+  <div class="py-2">
+    <%= form.label :title, class:"block mb-2 font-medium text-gray-700" %>
+    <%= form.text_field :title, class: "my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @book.errors[:title].any?}" %>
+    <% if @book.errors[:title].any? %>
+      <div class="text-red-600"><%= @book.errors[:title].first %></div>
+    <% end %>
+  </div>
+
+  <div class="py-2">
+    <%= form.label :publisher %><br>
+    <%= form.text_field :publisher, class: "my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @book.errors[:publisher].any?}" %>
+    <% if @book.errors[:publisher].any? %>
+      <div class="text-red-600"><%= @book.errors[:publisher].first %></div>
+    <% end %>
+  </div>
+  <div class="flex justify-between">
+    <div class="py-2">
+      <%= form.label :publication_year %><br>
+      <%= form.text_field :publication_year, class: "my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @book.errors[:publication_year].any?}" %>
+      <% if @book.errors[:publication_year].any? %>
+        <div class="text-red-600"><%= @book.errors[:publication_year].first %></div>
+      <% end %>
+    </div>
+
+    <div class="py-2">
+      <%= form.label :isbn %><br>
+      <%= form.text_field :isbn, class: "my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @book.errors[:isbn].any?}" %>
+      <% if @book.errors[:isbn].any? %>
+        <div class="text-red-600"><%= @book.errors[:isbn].first %></div>
+      <% end %>
+    </div>
+    <div class="py-2">
+      <%= form.label :genre %>
+      <%= form.text_field :genre, class: "my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @book.errors[:genre].any?}" %>
+      <% if @book.errors[:genre].any? %>
+        <div class="text-red-600"><%= @book.errors[:genre].first %></div>
+      <% end %>
+    </div>
+    <div class="py-2">
+      <%= form.label :language, class:"my-2" %>
+      <%= form.text_field :language, class:"my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @book.errors[:language].any?}" %>
+      <% if @book.errors[:language].any? %>
+        <div class="text-red-600"><%= @book.errors[:language].first %></div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="py-2">
+    <%= form.label :summary, class: "my-2" %>
+    <%= form.text_area :summary, class: "my-2 block w-full h-24 rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @book.errors[:summary].any?}" %>
+    <% if @book.errors[:summary].any? %>
+      <div class="text-red-600"><%= @book.errors[:summary].first %></div>
+    <% end %>
+  </div>
+
+  <div class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+    <%= form.submit %>
+    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+    </svg>
+  </div>
+
+<% end %>

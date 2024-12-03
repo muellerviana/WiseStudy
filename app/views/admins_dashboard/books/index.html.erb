@@ -23,6 +23,9 @@
             <%= row.with_cell { book.summary } %>
             <%= row.with_cell { book.genre } %>
             <%= row.with_cell {  link_to 'view', admins_dashboard_book_path(book.id)} %>
+            <%= row.with_cell do %>
+              <%= link_to 'edit', edit_admins_dashboard_book_path(book.id) %>
+            <% end %> 
         <% end %>
       <% end %>
     </div>
