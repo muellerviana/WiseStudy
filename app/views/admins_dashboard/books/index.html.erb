@@ -31,6 +31,9 @@
             <%= row.with_cell do %>
               <%= link_to 'edit', edit_admins_dashboard_book_path(book.id) %>
             <% end %> 
+            <%= row.with_cell do %>
+             <%= link_to 'delete', admins_dashboard_book_path(book.id), data: { turbo_method: :delete,  turbo_confirm: 'Are you sure you want to delete this article?' } %>
+            <% end %> 
         <% end %>
       <% end %>
     </div>
@@ -39,7 +42,7 @@
   <% else %>
     <%= render EmptyListComponent.new() do |component| %>
       <%= component.with_button do %>
-        <%= render ButtonComponent.new(text: "Create Book") %>
+        <%= render ButtonComponent.new(text: "Create Book", link: new_admins_dashboard_book_path) %>
       <% end %>
     <% end %>
   <% end %>

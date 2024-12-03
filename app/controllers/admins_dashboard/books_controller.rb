@@ -35,6 +35,14 @@ class AdminsDashboard::BooksController < AdminsDashboardController
     end
   end
 
+  def destroy
+    @book = Book.find(params[:id])
+
+    @book.destroy
+    redirect_to admins_dashboard_books_path, status: :see_other
+  end
+
+
   private 
 
   def book_params
