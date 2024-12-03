@@ -2,8 +2,8 @@ en:
     current_locale: "English (International)"
     site:
       nav_bar:
-        home_button: Início
-        articles: Artigos
+        home_button: Home
+        articles: Articles
       home:
         home_button: Home
         title: Word Wise
