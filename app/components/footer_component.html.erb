@@ -5,8 +5,12 @@
       <div class="flex space-x-6 md:order-2">
         <%= social_network %>
       </div>
-      <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">&copy; 2024 WordWise, Inc. All rights reserved.</p>
-      <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1"><%= link_to 'Are you an admin?', admins_dashboard_home_index_path %></p>
+      <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">&copy; <%= t("site.footer.reserved") %></p>
+      <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
+        <%= link_to admins_dashboard_home_index_path do %>
+         <%= t("site.footer.admin") %>
+        <% end %>
+      </p>
     </div>
   </div>
 </footer>

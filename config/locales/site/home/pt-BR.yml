@@ -4,8 +4,11 @@ pt-BR:
       nav_bar:
         home_button: Início
         articles: Artigos
+        search: Pesquisar
       home:
         title: Word Wise
         description: Encontre recursos, estudos bíblicos e mensagens que edificam sua fé e fortalecem sua caminhada cristã. Aqui, tudo é voltado para exaltar Cristo e transformar vidas pela Palavra de Deus.
       articles:
-      
+      footer: 
+        reserved: 2025 WordWise, Inc. Todos direitos reservados.
+        admin: Você é um administrador?
