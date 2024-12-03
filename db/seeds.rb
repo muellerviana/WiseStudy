@@ -11,16 +11,20 @@
 #create task to clean an rebuild database
 #rails db:drop
 
-author1 = Author.create(name: "Tolkien", last_name: "J.R", birth_date:('1982-01-01'))
-author2 = Author.create(name: "Lewis", last_name: "C.S", birth_date:('1999-01-12'))
-author3 = Author.create(name: "Müller", last_name: "Viana", birth_date:('31-07-1994'))
+author1 = Author.create(name: "C.S",
+                        last_name: "Lewis",
+                        birth_date:('1898-09-29'))
 
-book = Book.create(title: "Book Title")
+book = Book.create( 
+    title: "Mere Cristianity",
+    publisher: "HarperCollins Publishers",
+    publication_year: "2009" , 
+    isbn: "9780007332243", 
+    summary: "One of the most popular and beloved introductions to the concept of faith ever written, Mere Christianity has sold millions of copies worldwide.",  
+    genre: "Teologia",
+    language: "English",
+  )
 
 book.authors << author1
-book.authors << author2
 
 book.save!
-
-book2 = Book.create(title: "A casa de Papel")
-book2.authors << author3
