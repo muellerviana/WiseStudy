@@ -4,8 +4,12 @@ en:
       nav_bar:
         home_button: Home
         articles: Articles
+        search: Search
       home:
         home_button: Home
         title: Word Wise
         description: Find resources, Bible studies, and messages to strengthen your faith and guide your Christian walk. Everything here is centered on exalting Christ and transforming lives through Gods Word.
       articles:
+      footer: 
+        reserved: 2025 WordWise, Inc. All rights reserved.
+        admin: Are you an admin?
