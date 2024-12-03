@@ -1,0 +1,49 @@
+<div class="">  
+  <% if @books.present? %>
+    <div class="flex">
+      <div class="ml-auto">
+        <%= render ButtonComponent.new(text:"New Book", link: new_admins_dashboard_book_path) %>
+      </div>
+    </div>
+  
+   <div class="">
+      <%= render TableComponent.new do |component| %>
+        <%= component.with_header(titles: [
+          t('activerecord.attributes.book.id'),
+          t('activerecord.attributes.book.title'),
+          t('activerecord.attributes.book.publisher'),
+          t('activerecord.attributes.book.publication_year'),
+          t('activerecord.attributes.book.isbn'),
+          t('activerecord.attributes.book.summary'),
+          t('activerecord.attributes.book.genre')
+        ]) %>
+
+        <%= @books.each do |book|%>
+          <%= component.with_row do |row| %>
+            <%= row.with_cell { book.id.to_s } %>
+            <%= row.with_cell { book.title } %>
+            <%= row.with_cell { book.publisher } %>
+            <%= row.with_cell { book.publication_year.to_s } %>
+            <%= row.with_cell { book.isbn } %>
+            <%= row.with_cell { book.summary } %>
+            <%= row.with_cell { book.genre } %>
+            <%= row.with_cell {  link_to 'view', admins_dashboard_book_path(book.id)} %>
+            <%= row.with_cell do %>
+              <%= link_to 'edit', edit_admins_dashboard_book_path(book.id) %>
+            <% end %> 
+            <%= row.with_cell do %>
+             <%= link_to 'delete', admins_dashboard_book_path(book.id), data: { turbo_method: :delete,  turbo_confirm: 'Are you sure you want to delete this article?' } %>
+            <% end %> 
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+  
+  <% else %>
+    <%= render EmptyListComponent.new() do |component| %>
+      <%= component.with_button do %>
+        <%= render ButtonComponent.new(text: "Create Book", link: new_admins_dashboard_book_path) %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -2,7 +2,8 @@
   <% if @articles.present? %>
     <div class="flex">
       <div class="ml-auto">
-        <%= render ButtonComponent.new(text:"New Article") %>
+        <%= render ButtonComponent.new(text:"New Article",
+                                       link: new_admins_dashboard_article_path) %>
       </div>
     </div>
     <div class="">
@@ -36,7 +37,7 @@
   <% else %>
     <%= render EmptyListComponent.new() do |component| %>
       <%= component.with_button do %>
-        <%= render ButtonComponent.new(text: "Create Article") %>
+        <%= render ButtonComponent.new(text: "Create Article", link: new_admins_dashboard_article_path) %>
       <% end %>
     <% end %>
   <% end %>

@@ -1,34 +1,33 @@
+<%= form_with(model: [:admins_dashboard, @article ], class:"p-4 border rounded-sm shadow-md") do |form| %>
+  <div class="flex justify-between"> 
+    <div class="w-full">
+      <%= form.label :title, class:"mb-2 block font-medium text-gray-700" %>
+      <%= form.text_field :title, class: "w-full block rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control form-control #{'is-invalid' if @article.errors[:title].any?}" %>
+      <% if @article.errors[:title].any? %>
+        <div class="text-red-600"><%= @article.errors[:title].first %></div>
+      <% end %>
+    </div>
 
-
-<%= form_with(model: [:admins_dashboard, @article ]) do |form| %>
-
-  <div>
-    <%= form.label :article_cover %><br>
-    <%= form.file_field :article_cover, class: "form-control #{'is-invalid' if @article.errors[:article_cover].any?}" %>
-    <% if @article.errors[:article_cover].any? %>
-      <div class="text-red-600"><%= @article.errors[:article_cover].first %></div>
-    <% end %>
+    <div class="p-6 mb-4">
+      <%= form.label :article_cover %>
+      <%= form.file_field :article_cover, class: "w-8/9 form-control #{'is-invalid' if @article.errors[:article_cover].any?}" %>
+      <% if @article.errors[:article_cover].any? %>
+        <div class="text-red-600"><%= @article.errors[:article_cover].first %></div>
+      <% end %>
+    </div>
   </div>
 
   <div class="py-2">
-    <%= form.label :title %><br>
-    <%= form.text_field :title, class: "form-control #{'is-invalid' if @article.errors[:title].any?}" %>
-    <% if @article.errors[:title].any? %>
-      <div class="text-red-600"><%= @article.errors[:title].first %></div>
-    <% end %>
-  </div>
-
-  <div class="py-2">
-    <%= form.label :description %><br>
-    <%= form.text_area :description, class: "form-control #{'is-invalid' if @article.errors[:description].any?}" %>
+    <%= form.label :description, class:"mb-2 block" %>
+    <%= form.text_area :description, class: "block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @article.errors[:description].any?}" %>
     <% if @article.errors[:description].any? %>
       <div class="text-red-600"><%= @article.errors[:description].first %></div>
     <% end %>
   </div>
 
   <div class="py-2">
-    <%= form.label :body %><br>
-    <%= form.text_area :body, class: "form-control #{'is-invalid' if @article.errors[:body].any?}" %>
+    <%= form.label :body, class:"mb-2 block" %>
+    <%= form.text_area :body, class: "block w-full h-80 rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @article.errors[:body].any?}" %>
     <% if @article.errors[:body].any? %>
       <div class="text-red-600"><%= @article.errors[:body].first %></div>
     <% end %>

@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
   devise_for :admins
   namespace :site do
+    get 'books/index'
     get 'home/index'
-    resources :articles
+    resources :articles, only: [:index, :show]
+    resources :books, only: [:index, :show]
   end
 
   namespace :admins_dashboard do
     resources :articles
     resources :home, only: [:index]
+    resources :books
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
