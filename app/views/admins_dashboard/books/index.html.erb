@@ -1,8 +1,37 @@
-<div>
-  <% @books.each do |book| %>
-    <hr>
-    <% book.id %>
-    <%= book.title %>
-    <%= book.publisher %>
+<div class="">  
+  <% if @books.present? %>
+  
+   <div class="">
+      <%= render TableComponent.new do |component| %>
+        <%= component.with_header(titles: [
+          t('activerecord.attributes.book.id'),
+          t('activerecord.attributes.book.title'),
+          t('activerecord.attributes.book.publisher'),
+          t('activerecord.attributes.book.publication_year'),
+          t('activerecord.attributes.book.isbn'),
+          t('activerecord.attributes.book.summary'),
+          t('activerecord.attributes.book.genre')
+        ]) %>
+
+        <%= @books.each do |book|%>
+          <%= component.with_row do |row| %>
+            <%= row.with_cell { book.id.to_s } %>
+            <%= row.with_cell { book.title } %>
+            <%= row.with_cell { book.publisher } %>
+            <%= row.with_cell { book.publication_year.to_s } %>
+            <%= row.with_cell { book.isbn } %>
+            <%= row.with_cell { book.summary } %>
+            <%= row.with_cell { book.genre } %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+  
+  <% else %>
+    <%= render EmptyListComponent.new() do |component| %>
+      <%= component.with_button do %>
+        <%= render ButtonComponent.new(text: "Create Book") %>
+      <% end %>
+    <% end %>
   <% end %>
 </div>
