@@ -1,0 +1,23 @@
+'pt-BR':
+  activerecord:
+    models:
+      admin: 
+        one: Administrador
+        other: Administradores
+      article: 
+        one: Artigo
+        other: Artigos
+    attributes:
+      admin:
+        id: ID
+        email: Email
+        created_at: Criado em
+        updated_at: Atualizado em
+      article:
+        id: ID
+        title: Título
+        description: Descrição
+        body: Conteúdo
+        article_cover: Capa do artigo
+        created_at: Criado em
+        updated_at: Atualizado em

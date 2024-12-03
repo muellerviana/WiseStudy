@@ -1,9 +1,11 @@
 en:
-  site:
-    home: 
-      title: "Word Wise"
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Nunc sagittis ac magna eget suscipit. Ut pellentesque feugiat quam vitae laoreet.
-      Quisque ut velit mi. Cras tincidunt enim sed leo pellentesque pulvinar.
-      Nunc euismod finibus orci vel dapibus. Donec tincidunt sapien in nibh efficitur aliquet. 
-      Phasellus eget nulla sed augue tincidunt rutrum. "
+    current_locale: "English (International)"
+    site:
+      nav_bar:
+        home_button: Início
+        articles: Artigos
+      home:
+        home_button: Home
+        title: Word Wise
+        description: Find resources, Bible studies, and messages to strengthen your faith and guide your Christian walk. Everything here is centered on exalting Christ and transforming lives through Gods Word.
+      articles:
