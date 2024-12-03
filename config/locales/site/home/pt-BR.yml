@@ -1,0 +1,11 @@
+pt-BR:
+    current_locale: "Português Brasil"
+    site:
+      nav_bar:
+        home_button: Início
+        articles: Artigos
+      home:
+        title: Word Wise
+        description: Encontre recursos, estudos bíblicos e mensagens que edificam sua fé e fortalecem sua caminhada cristã. Aqui, tudo é voltado para exaltar Cristo e transformar vidas pela Palavra de Deus.
+      articles:
+      
