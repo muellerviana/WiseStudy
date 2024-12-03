@@ -7,6 +7,20 @@ class AdminsDashboard::BooksController < AdminsDashboardController
     @book = Book.includes(:authors).find(params[:id])
   end
 
+  def new
+    @book = Book.new
+  end
+
+  def create
+    @book = Book.new(book_params)
+
+    if @book.save
+      redirect_to admins_dashboard_books_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def edit
     @book = Book.find(params[:id])
   end
