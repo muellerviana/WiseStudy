@@ -1,0 +1,2 @@
+module AdminsDashboard::AuthorsHelper
+end

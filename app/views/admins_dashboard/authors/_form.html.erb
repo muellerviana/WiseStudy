@@ -1,0 +1,76 @@
+<%= form_with(model: [:admins_dashboard, @author ], class:"p-4 border rounded-sm shadow-md") do |form| %>
+    <div class="w-full">
+      <%= form.label :name, class:"mb-2 block font-medium text-gray-700" %>
+      <%= form.text_field :name, class:"w-full block rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control form-control #{'is-invalid' if @author.errors[:name].any?}" %>
+      <% if @author.errors[:name].any? %>
+        <div class="text-red-600"><%= @author.errors[:name].first %></div>
+      <% end %>
+    </div>
+
+
+    <div class="py-2">  
+      <%= form.label :last_name, class:"mb-2 block" %>
+      <%= form.text_field :last_name, class: "block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @author.errors[:last_name].any?}" %>
+      <% if @author.errors[:last_name].any? %>
+        <div class="text-red-600"><%= @author.errors[:last_name].first %></div>
+      <% end %>
+    </div>
+
+    <div class="flex justify-between"> 
+      <div class="p-6 mb-4">
+        <%= form.label :author_cover %>
+        <%= form.file_field :author_cover, class: "w-8/9 form-control #{'is-invalid' if @author.errors[:author_cover].any?}" %>
+        <% if @author.errors[:author_cover].any? %>
+          <div class="text-red-600"><%= @author.errors[:author_cover].first %></div>
+        <% end %>
+      </div>
+
+       <div class="py-2">
+          <%= form.label :birth_date, class:"mb-2 block" %>
+          <%= form.text_field :birth_date, class: "block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @author.errors[:birth_date].any?}" %>
+          <% if @author.errors[:birth_date].any? %>
+            <div class="text-red-600"><%= @author.errors[:birth_date].first %></div>
+          <% end %>
+        </div>
+
+        <div class="py-2">
+          <%= form.label :death_date, class:"mb-2 block" %>
+          <%= form.text_field :death_date, class: "block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @author.errors[:death_date].any?}" %>
+          <% if @author.errors[:death_date].any? %>
+            <div class="text-red-600"><%= @author.errors[:death_date].first %></div>
+          <% end %>
+        </div>
+
+        <div class="py-2">
+          <%= form.label :nationality, class:"mb-2 block" %>
+          <%= form.text_field :nationality, class: "block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @author.errors[:nationality].any?}" %>
+          <% if @author.errors[:nationality].any? %>
+            <div class="text-red-600"><%= @author.errors[:nationality].first %></div>
+          <% end %>
+        </div>
+    </div>
+
+  <div class="py-2">
+    <%= form.label :bio, class:"mb-2 block" %>
+    <%= form.text_area :bio, class: "block w-full h-24 rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @author.errors[:bio].any?}" %>
+    <% if @author.errors[:bio].any? %>
+      <div class="text-red-600"><%= @author.errors[:bio].first %></div>
+    <% end %>
+  </div>
+
+  <div class="py-2">
+          <%= form.label :website, class:"mb-2 block" %>
+          <%= form.text_field :website, class: "block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @author.errors[:website].any?}" %>
+          <% if @author.errors[:website].any? %>
+            <div class="text-red-600"><%= @author.errors[:website].first %></div>
+          <% end %>
+        </div>
+
+  <div class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+    <%= form.submit %>
+    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+    </svg>
+  </div>
+
+<% end %>
