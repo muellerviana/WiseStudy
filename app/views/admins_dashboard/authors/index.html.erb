@@ -1,0 +1,49 @@
+<div class="">  
+  <% if @authors.present? %>
+    <div class="flex">
+      <div class="ml-auto">
+        <%= render ButtonComponent.new(text:"New Author", link: new_admins_dashboard_author_path) %>
+      </div>
+    </div>
+  
+   <div class="">
+      <%= render TableComponent.new do |component| %>
+        <%= component.with_header(titles: [
+          t('activerecord.attributes.author.id'),
+          t('activerecord.attributes.author.name'),
+          t('activerecord.attributes.author.last_name'),
+          t('activerecord.attributes.author.bio'),
+          t('activerecord.attributes.author.birth_date'),
+          t('activerecord.attributes.author.nationality'),
+          t('activerecord.attributes.author.website')
+        ]) %>
+
+        <%= @authors.each do |author|%>
+          <%= component.with_row do |row| %>
+            <%= row.with_cell { author.id.to_s } %>
+            <%= row.with_cell { author.name } %>
+            <%= row.with_cell { author.last_name } %>
+            <%= row.with_cell { author.bio } %>
+            <%= row.with_cell { author.birth_date } %>
+            <%= row.with_cell { author.nationality } %>
+            <%= row.with_cell { author.website } %>
+            <%= row.with_cell {  link_to 'view', admins_dashboard_author_path(author.id)} %>
+            <%= row.with_cell do %>
+              <%= link_to 'edit', edit_admins_dashboard_author_path(author.id) %>
+            <% end %> 
+            <%= row.with_cell do %>
+             <%= link_to 'delete', admins_dashboard_author_path(author.id), data: { turbo_method: :delete,  turbo_confirm: 'Are you sure you want to delete this author?' } %>
+            <% end %> 
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+  
+  <% else %>
+    <%= render EmptyListComponent.new() do |component| %>
+      <%= component.with_button do %>
+        <%= render ButtonComponent.new(text: "Create Author", link: new_admins_dashboard_author_path) %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   end
 
   namespace :admins_dashboard do
-    resources :articles
+    get 'authors/index'
     resources :home, only: [:index]
+    resources :articles
+    resources :authors
     resources :books
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,0 +1,33 @@
+<%# Must create a ticket like ItemDisplayComponent for being reusable
+when displaying instancies.
+ %>
+<div class="flex justify-between w-3/5 m-auto">
+  <div class="text-gray-950 dark:text-gray-50">
+    <div class="flex text-xl mb-4">
+      <p> Name: <%= "#{@author.name}" + " #{@author.last_name}" %> </p>
+    </div>
+    
+    <p> Birth date: <%= @author.birth_date %>
+    <% if @author.death_date %>
+      <p> Death <%= @author.death_date %>
+    <% end %>
+    <p> Nationality: <%= @author.nationality %>
+    <p> Website: <%= @author.website %>
+    <% if @author.books.present? %>
+      <h3 class="text-xl my-3"> Books: </h3>
+      <% @author.books.each do |book|%>
+        <p><%= book.title %></p>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="">
+    <p class="my-4"> Bio: <%= @author.bio %>
+  </div>
+</div>
+
+ <div class="ml-auto">
+        <%= render ButtonComponent.new(text:"Delete this Author",
+                                        link: admins_dashboard_author_path,
+                                        method: :delete, 
+                                        confirm_message: "Do you really want to delete this Author") %>
+      </div>
