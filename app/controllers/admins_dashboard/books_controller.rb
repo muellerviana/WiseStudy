@@ -9,6 +9,7 @@ class AdminsDashboard::BooksController < AdminsDashboardController
 
   def new
     @book = Book.new
+    @book.authors.build
   end
 
   def create
@@ -46,6 +47,7 @@ class AdminsDashboard::BooksController < AdminsDashboardController
   private 
 
   def book_params
-    params.require(:book).permit(:title, :publisher, :publication_year, :isbn, :summary, :genre, :language)
+    params.require(:book).permit(:title, :publisher, :publication_year, :isbn, :summary, :genre, :language, 
+                                  authors_attributes: [:id, :name, :last_name, :birth_date, :_destroy])
   end
 end
