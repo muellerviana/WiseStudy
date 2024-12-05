@@ -1,10 +1,21 @@
 <div class="px-16 py-4">
   <div class="grid gap-4 w-full h-full items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
     <% @articles.each do |article| %>
-      <%= render(CardComponent.new(title: article.title, 
-                                   body: article.description, 
+      <%= render CardComponent.new(title: article.title,
                                    link: site_article_path(article),
-                                   image: article.article_cover.url || "https://t4.ftcdn.net/jpg/06/71/92/37/360_F_671923740_x0zOL3OIuUAnSF6sr7PuznCI5bQFKhI0.jpg")) %>
+                                   style: :bordered,
+                                   description: article.description,
+                                   image: article.article_cover.url || "https://t4.ftcdn.net/jpg/06/71/92/37/360_F_671923740_x0zOL3OIuUAnSF6sr7PuznCI5bQFKhI0.jpg") do |component| %>
+                                
+        <% component.with_actions do %>
+          <%= link_to @link, class: 'mt-auto inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800' do %>
+            Read more
+            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+          <% end %>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
