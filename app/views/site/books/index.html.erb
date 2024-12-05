@@ -1,13 +1,11 @@
 <div class="px-16 py-4">
-  <div class="max-w-52">
+  <div class="grid gap-4 w-full h-full items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
     <% @books.each do |book| %>
-      <p>Title: <%= book.title %> </p>
-      <p>Publisher: <%= book.publisher %></p>
-      <p>Publication Year: <%= book.publication_year %> </p>
-      <p>ISBN: <%= book.isbn%> </p>
-      <p>Summary: <%= book.summary %></p>
-      <p>Genre: <%= book.genre %> </p>
-      <p>Language: <%= book.language %> </p>
-       <% end %>
+      <%= render CardComponent.new(
+        title: book.title,
+        link: site_book_path(book),
+        image: "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png"
+      ) %>    
+    <% end %>
   </div>
 </div>
