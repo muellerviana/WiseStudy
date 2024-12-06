@@ -12,11 +12,17 @@ when displaying instancies.
       <p> Death <%= @author.death_date %>
     <% end %>
     <p> Nationality: <%= @author.nationality %>
-    <p> Website: <%= @author.website %>
+    <p> Website: <%= @author.website %></p>
     <% if @author.books.present? %>
       <h3 class="text-xl my-3"> Books: </h3>
       <% @author.books.each do |book|%>
         <p><%= book.title %></p>
+      <% end %>
+    <% end %>
+    <% if @author.articles.present? %>
+      <h3 class="text-xl my-3"> Articles: </h3>
+      <% @author.articles.each do |article|%>
+        <p><%= article.title %></p>
       <% end %>
     <% end %>
   </div>

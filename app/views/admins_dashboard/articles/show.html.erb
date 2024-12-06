@@ -5,3 +5,8 @@ when displaying instancies.
 <h1> <%= @article.title %> </h1>
 <h2> <%= @article.description%>
 <p> <%= @article.body %>
+
+    <% @article.authors.each do | author|%>
+      <p><%= author.last_name %>,
+      <%= author.name %></p>
+    <% end %>

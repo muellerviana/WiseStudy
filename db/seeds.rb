@@ -18,6 +18,12 @@ author1 = Author.create(name: "C.S",
                         nationality: "Ireland",
                         website: nil
                         )
+author2 = Author.create(name: "Muller",
+                        last_name: "Viana",
+                        birth_date:('1898-09-29'),
+                        nationality: "Brasil",
+                        website: nil
+                        )
 
 book = Book.create( 
     title: "Mere Cristianity",
@@ -32,3 +38,12 @@ book = Book.create(
 book.authors << author1
 
 book.save!
+
+#create article
+article = Article.create(
+  title: "Historia da Teologia Reformada",
+  description: "Breve resumo",
+  body: "lorem ipsum dolor si amet"
+)
+
+article.authors << author1
