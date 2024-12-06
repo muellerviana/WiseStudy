@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
   devise_for :admins
   namespace :site do
-    get 'books/index'
     get 'home/index'
     resources :articles, only: [:index, :show]
     resources :books, only: [:index, :show]
+    resources :authors, only: [:index, :show]
   end
 
   namespace :admins_dashboard do
-    get 'authors/index'
     resources :home, only: [:index]
     resources :articles
     resources :authors
