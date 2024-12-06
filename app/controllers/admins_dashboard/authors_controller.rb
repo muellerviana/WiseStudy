@@ -4,7 +4,7 @@ class AdminsDashboard::AuthorsController < AdminsDashboardController
   end
 
   def show
-    @author = Author.includes(:books).find(params[:id])
+    @author = Author.find(params[:id])
   end
 
   def new
