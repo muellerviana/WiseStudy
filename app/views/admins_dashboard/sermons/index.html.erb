@@ -1,0 +1,49 @@
+<div class="">  
+  <% if @sermons.present? %>
+    <div class="flex">
+      <div class="ml-auto">
+        <%= render ButtonComponent.new(text:"New Seron", link: new_admins_dashboard_sermon_path) %>
+      </div>
+    </div>
+  
+   <div class="">
+      <%= render TableComponent.new do |component| %>
+        <%= component.with_header(titles: [
+          t('activerecord.attributes.sermon.id'),
+          t('activerecord.attributes.sermon.title'),
+          t('activerecord.attributes.sermon.format'),
+          t('activerecord.attributes.sermon.description'),
+          t('activerecord.attributes.sermon.category'),
+          t('activerecord.attributes.sermon.bible_text'),
+          t('activerecord.attributes.sermon.language')
+        ]) %>
+
+        <%= @sermons.each do |sermon|%>
+          <%= component.with_row do |row| %>
+            <%= row.with_cell { sermon.id.to_s } %>
+            <%= row.with_cell { sermon.title } %>
+            <%= row.with_cell { sermon.format} %>
+            <%= row.with_cell { sermon.description } %>
+            <%= row.with_cell { sermon.category } %>
+            <%= row.with_cell { sermon.bible_text } %>
+            <%= row.with_cell { sermon.language } %>
+            <%= row.with_cell {  link_to 'view', admins_dashboard_sermon_path(sermon.id)} %>
+            <%= row.with_cell do %>
+              <%= link_to 'edit', edit_admins_dashboard_sermon_path(sermon.id) %>
+            <% end %> 
+            <%= row.with_cell do %>
+             <%= link_to 'delete', admins_dashboard_sermon_path(sermon.id), data: { turbo_method: :delete,  turbo_confirm: 'Are you sure you want to delete this sermon?' } %>
+            <% end %> 
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+  
+  <% else %>
+    <%= render EmptyListComponent.new() do |component| %>
+      <%= component.with_button do %>
+        <%= render ButtonComponent.new(text: "Create Sermon", link: new_admins_dashboard_sermon_path) %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,40 @@
+<div class="w-4/5 m-auto">
+  <div class="text-gray-950 dark:text-gray-50">
+    <h1 class="text-2xl my-4">Title: <%= @sermon.title %></h1>
+    <h2 class="text-xl my-4">Description: <%= @sermon.description %></h2>
+    <h2 class="text-xl my-4">Bible Text: <%= @sermon.bible_text %></h2>
+    <p>Duration: <%= @sermon.duration %></p>
+    
+    <% if @sermon.video_url.present? %>
+      <div class="my-6" >
+        <iframe 
+          width="560" 
+          height="315" 
+          src="<%= @sermon.video_url  %>" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    <% else %>
+      <p>No video available</p>
+    <% end %>
+
+    <p>Date: <%= @sermon.date %></p>
+    <p>Category: <%= @sermon.category %></p>
+    <p>Language: <%= @sermon.language %></p>
+
+    <div class="flex">
+      <div class="ml-auto">
+        <%= render ButtonComponent.new(
+          text: "Delete this Sermon",
+          link: admins_dashboard_sermon_path,
+          method: :delete, 
+          confirm_message: "Are you sure you want to delete this sermon?"
+        ) %>
+      </div>
+    </div>
+  </div>
+</div>
