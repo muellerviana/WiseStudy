@@ -4,7 +4,7 @@ class AdminsDashboard::ArticlesController < AdminsDashboardController
   end
 
   def show
-    @article = Article.includes(:authors).find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def new
