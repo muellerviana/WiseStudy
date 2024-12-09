@@ -1,4 +1,11 @@
-<div>
-  <h1 class="font-bold text-4xl">Site::Sermons#index</h1>
-  <p>Find me in app/views/site/sermons/index.html.erb</p>
+<div class="px-16 py-4">
+  <div class="grid gap-4 w-full h-full items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+    <% @sermons.each do |sermon| %>
+       <%= render CardComponent.new(
+        title: sermon.title,
+        link: site_sermon_path(sermon),
+        image: "https://ccwebcontent.blob.core.windows.net/resources/blobs/images/870x489/artwork-audioplaceholder.png"
+      ) %>  
+    <% end %>
+  </div>
 </div>
