@@ -10,57 +10,9 @@
 
 #create task to clean an rebuild database
 #rails db:drop
+author = Author.first
 
-author1 = Author.create(name: "C.S",
-                        last_name: "Lewis",
-                        birth_date:('1898-09-29'),
-                        death_date:('1969-07-21'),
-                        nationality: "Ireland",
-                        website: nil
-                        )
-author2 = Author.create(name: "Muller",
-                        last_name: "Viana",
-                        birth_date:('1898-09-29'),
-                        nationality: "Brasil",
-                        website: nil
-                        )
-
-book = Book.create( 
-    title: "Mere Cristianity",
-    publisher: "HarperCollins Publishers",
-    publication_year: "2009" , 
-    isbn: "9780007332243", 
-    summary: "One of the most popular and beloved introductions to the concept of faith ever written, Mere Christianity has sold millions of copies worldwide.",  
-    genre: "Teologia",
-    language: "English",
-  )
-
-book.authors << author1
-
-book.save!
-
-#create article
-article = Article.create(
-  title: "Historia da Teologia Reformada",
-  description: "Breve resumo",
-  body: "lorem ipsum dolor si amet"
-)
-
-article.authors << author1
-
-
-#create sermon
-sermon = Sermon.create(
- title: "A Vinda de Cristo para Julgar Sodoma e Gomorra",
- format: "Video",
- description: "Série: As Vindas de Cristo em Juízo no Velho Testamento - Parte 1",
- video_url: "https://www.youtube.com/embed/_5MT_gI485U?si=Dxgw1hDJKJ4ascZ7",
- audio_url: nil,
- duration: nil,
- date: nil,
- category: nil,
- bible_text: "Gênesis 18:1-33)",
- language: "Português"
-)
- 
-
+Dir[Rails.root.join('db/seeds/*.rb')].sort.each do |file|
+  puts "Seeding: #{File.basename(file)}"
+  load file
+end
