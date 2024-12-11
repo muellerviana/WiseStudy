@@ -46,3 +46,4 @@ fly.toml
 
 #ignore data related files
 db/schema.rb
+.env

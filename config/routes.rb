@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :articles, only: [:index, :show]
     resources :books, only: [:index, :show]
     resources :authors, only: [:index, :show]
+    resources :sermons, only: [:index, :show]
   end
 
   namespace :admins_dashboard do
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
     resources :articles
     resources :authors
     resources :books
+    resources :sermons
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
