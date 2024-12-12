@@ -2,9 +2,12 @@ pt-BR:
     current_locale: "Português Brasil"
     site:
       nav_bar:
+        search: Pesquisar
         home_button: Início
         articles: Artigos
-        search: Pesquisar
+        books: Livros
+        sermons: Sermões
+        authors: Autores
       home:
         title: Word Wise
         description: Encontre recursos, estudos bíblicos e mensagens que edificam sua fé e fortalecem sua caminhada cristã. Aqui, tudo é voltado para exaltar Cristo e transformar vidas pela Palavra de Deus.
