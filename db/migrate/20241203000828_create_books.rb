@@ -8,6 +8,7 @@ class CreateBooks < ActiveRecord::Migration[7.1]
       t.text :summary
       t.string :genre
       t.string :language
+      t.string :book_cover
 
       t.timestamps
     end
