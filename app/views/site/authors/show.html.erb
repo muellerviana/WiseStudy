@@ -7,11 +7,11 @@ when displaying instancies.
       <p> Name: <%= "#{@author.name}" + " #{@author.last_name}" %> </p>
     </div>
     
-    <p> Birth date: <%= @author.birth_date %>
+    <p> Birth date: <%= @author.birth_date %> </p>
     <% if @author.death_date %>
-      <p> Death <%= @author.death_date %>
+      <p> Death <%= @author.death_date %></p>
     <% end %>
-    <p> Nationality: <%= @author.nationality %>
+    <p> Nationality: <%= @author.nationality %></p>
     <p> Website: <%= @author.website %></p>
     <% if @author.books.present? %>
       <h3 class="text-xl my-3"> Books: </h3>

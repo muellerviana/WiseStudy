@@ -3,4 +3,6 @@ class Book < ApplicationRecord
   accepts_nested_attributes_for :authors
 
   validates_presence_of :title
+  
+  mount_uploader :book_cover, BookCoverUploader
 end

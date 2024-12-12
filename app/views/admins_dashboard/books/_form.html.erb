@@ -1,6 +1,13 @@
 
 
 <%= form_with(model: [:admins_dashboard, @book ], class:"p-4 border rounded-sm shadow-md") do |form| %>
+  <div class="p-6 mb-4">
+    <%= form.label :book_cover %>
+    <%= form.file_field :book_cover, class: "w-8/9 form-control #{'is-invalid' if @book.errors[:book_cover].any?}" %>
+    <% if @book.errors[:book_cover].any? %>
+      <div class="text-red-600"><%= @book.errors[:book_cover].first %></div>
+    <% end %>
+  </div>
 
   <div class="py-2">
     <%= form.label :title, class:"block mb-2 font-medium text-gray-700" %>
@@ -17,6 +24,7 @@
       <div class="text-red-600"><%= @book.errors[:publisher].first %></div>
     <% end %>
   </div>
+  
   <div class="flex justify-between">
     <div class="py-2">
       <%= form.label :publication_year %><br>

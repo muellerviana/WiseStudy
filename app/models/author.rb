@@ -6,4 +6,6 @@ class Author < ApplicationRecord
   accepts_nested_attributes_for :books
   
   validates :name, :last_name, :birth_date, presence: true
+
+  mount_uploader :author_avatar, AuthorAvatarUploader
 end

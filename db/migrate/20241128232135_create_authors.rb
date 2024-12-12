@@ -7,7 +7,7 @@ class CreateAuthors < ActiveRecord::Migration[7.1]
       t.date :birth_date
       t.date :death_date
       t.string :nationality
-      t.string :book_avatar
+      t.string :author_avatar
       t.string :website
 
       t.timestamps
