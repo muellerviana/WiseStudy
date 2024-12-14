@@ -18,11 +18,11 @@
 
     <div class="flex justify-between"> 
       <div class="p-6 mb-4">
-        <%= form.label :author_cover %>
-        <%= form.file_field :author_cover, class: "w-8/9 form-control #{'is-invalid' if @author.errors[:author_cover].any?}" %>
-        <% if @author.errors[:author_cover].any? %>
-          <div class="text-red-600"><%= @author.errors[:author_cover].first %></div>
-        <% end %>
+        <%= form.label :author_avatar %>
+      <%= form.file_field :author_avatar, class: "w-8/9 form-control #{'is-invalid' if @author.errors[:author_avatar].any?}" %>
+      <% if @author.errors[:author_avatar].any? %>
+        <div class="text-red-600"><%= @author.errors[:author_avatar].first %></div>
+      <% end %>
       </div>
 
        <div class="py-2">

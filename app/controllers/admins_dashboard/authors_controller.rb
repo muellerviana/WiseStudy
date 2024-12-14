@@ -46,6 +46,6 @@ class AdminsDashboard::AuthorsController < AdminsDashboardController
   private 
 
   def author_params
-    params.require(:author).permit(:name, :last_name, :bio, :birth_date, :death_date, :nationality, :book_avatar, :website)
+    params.require(:author).permit(:name, :last_name, :bio, :birth_date, :death_date, :nationality, :author_avatar, :website)
   end
 end

@@ -1,0 +1,91 @@
+
+
+<%= form_with(model: [:admins_dashboard, @sermon ], class:"p-4 border rounded-sm shadow-md") do |form| %>
+
+  <div class="py-2">
+    <%= form.label :title, class:"block mb-2 font-medium text-gray-700" %>
+    <%= form.text_field :title, class: "my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @sermon.errors[:title].any?}" %>
+    <% if @sermon.errors[:title].any? %>
+      <div class="text-red-600"><%= @sermon.errors[:title].first %></div>
+    <% end %>
+  </div>
+
+  <div class="py-2">
+    <%= form.label :format %><br>
+    <%= form.text_field :format, class: "my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @sermon.errors[:format].any?}" %>
+    <% if @sermon.errors[:format].any? %>
+      <div class="text-red-600"><%= @sermon.errors[:format].first %></div>
+    <% end %>
+  </div>
+
+  <div class="py-2">
+    <%= form.label :description %><br>
+    <%= form.text_area :description, class: "my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @sermon.errors[:description].any?}" %>
+    <% if @sermon.errors[:description].any? %>
+      <div class="text-red-600"><%= @sermon.errors[:description].first %></div>
+    <% end %>
+  </div>
+
+  <div class="py-2">
+    <%= form.label :video_url %><br>
+    <%= form.text_field :video_url, class: "my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @sermon.errors[:video_url].any?}" %>
+    <% if @sermon.errors[:video_url].any? %>
+      <div class="text-red-600"><%= @sermon.errors[:video_url].first %></div>
+    <% end %>
+  </div>
+  <div class="py-2">
+    <%= form.label :audio_url %><br>
+    <%= form.text_field :audio_url, class: "my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @sermon.errors[:audio_url].any?}" %>
+    <% if @sermon.errors[:audio_url].any? %>
+      <div class="text-red-600"><%= @sermon.errors[:audio_url].first %></div>
+    <% end %>
+  </div>
+
+  <div class="py-2">
+    <%= form.label :duration %><br>
+    <%= form.text_field :duration, class: "my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @sermon.errors[:duration].any?}" %>
+    <% if @sermon.errors[:duration].any? %>
+      <div class="text-red-600"><%= @sermon.errors[:duration].first %></div>
+    <% end %>
+  </div>
+
+  <div class="py-2">
+    <%= form.label :date %><br>
+    <%= form.text_field :date, class: "my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @sermon.errors[:date].any?}" %>
+    <% if @sermon.errors[:date].any? %>
+      <div class="text-red-600"><%= @sermon.errors[:date].first %></div>
+    <% end %>
+  </div>
+
+  <div class="py-2">
+    <%= form.label :category %><br>
+    <%= form.text_field :category, class: "my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @sermon.errors[:category].any?}" %>
+    <% if @sermon.errors[:category].any? %>
+      <div class="text-red-600"><%= @sermon.errors[:category].first %></div>
+    <% end %>
+  </div>
+  
+  <div class="py-2">
+    <%= form.label :bible_text %><br>
+    <%= form.text_field :bible_text, class: "my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @sermon.errors[:bible_text].any?}" %>
+    <% if @sermon.errors[:bible_text].any? %>
+      <div class="text-red-600"><%= @sermon.errors[:bible_text].first %></div>
+    <% end %>
+  </div>
+
+  <div class="py-2">
+    <%= form.label :language %><br>
+    <%= form.text_field :language, class: "my-2 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-indigo-500 text-sm form-control #{'is-invalid' if @sermon.errors[:language].any?}" %>
+    <% if @sermon.errors[:language].any? %>
+      <div class="text-red-600"><%= @sermon.errors[:language].first %></div>
+    <% end %>
+  </div>
+   
+  <div class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+    <%= form.submit %>
+    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+    </svg>
+  </div>
+ 
+<% end %>

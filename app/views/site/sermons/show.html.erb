@@ -1,0 +1,31 @@
+<div class="relative text-gray-700  dark:text-gray-100 max-w-[80vw] mx-auto py-8">
+  <div class="block lg:flex text-gray-950 dark:text-gray-50">
+    <% if @sermon.video_url.present? %>
+      <div class="lg:w-1/2 lg:p-2 h-full md:h-[40vh]" >
+        <iframe 
+          src="<%= @sermon.video_url  %>" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen
+          class="w-full h-full">
+        </iframe>
+      </div>
+    <% else %>
+      <div>
+        <p>No video available</p>
+      </div>
+    <% end %>
+    <div class="w-full h-full lg:w-1/2 lg:p-2">
+      <h1 class="text-lg my-4">Title: <%= @sermon.title %></h1>
+      <h2 class="text-md my-4">Description: <%= @sermon.description %></h2>
+      <h2 class="text-md my-4">Bible Text: <%= @sermon.bible_text %></h2>
+
+      <p>Duration: <%= @sermon.duration %></p>
+      <p>Date: <%= @sermon.date %></p>
+      <p>Category: <%= @sermon.category %></p>
+      <p>Language: <%= @sermon.language %></p>
+    </div>
+  </div>
+</div>

@@ -2,9 +2,12 @@ en:
     current_locale: "English (International)"
     site:
       nav_bar:
+        search: Search
         home_button: Home
         articles: Articles
-        search: Search
+        books: Books
+        sermons: Sermons
+        authors: Authors
       home:
         home_button: Home
         title: Word Wise
