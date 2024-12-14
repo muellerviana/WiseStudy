@@ -1,58 +1,46 @@
-<!-- Button Component -->
-<div data-controller="toggleable">
-<button  data-action="click->toggleable#toggle click@window->toggleable#hide" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100  dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600  dark:bg-gray-800 dark:border-gray-700">
-    <span class="sr-only">Open main menu</span>
-    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-    </svg>
-</button>
+<div class="px-2 flex items-center" data-controller="toggleable">
+  <button  data-action="click->toggleable#toggle click@window->toggleable#hide" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100  dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600  dark:bg-gray-800 dark:border-gray-700">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+      </svg>
+  </button>
 
-<nav>
-  <div class="bg-gray-600 max-w-64 shaddow-red-300 shadow-3lg hidden lg:hidden absolute top-0 left-0 z-10 dark:bg-gray-900 dark:border-gray-50 shadow-lg w-full" data-toggleable-target="toggleable">
-   <div class="items-center grid-cols-6 gap-8">         
-          <ul class="flex flex-row font-medium mt-0 hover:bg-gray-500 hover:dark:bg-gray-600 space-x-8 rtl:space-x-reverse text-sm">
-               <li>
-                  <%= link_to root_path,
-                    class:"text-gray-50  block py-2 pl-3 pr-4  rounded md:hover:bg-transparent
-                    md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 
-                    dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" do %>
-                      <%= t("site.nav_bar.home_button")  %>
-                  <% end %>
-              </li>
-              <li>
-                  <%= link_to site_articles_path,
-                    class:"text-gray-50  block py-2 pl-3 pr-4 rounded  md:hover:bg-transparent
-                    md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 
-                    dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" do %>
-                      <%= t("site.nav_bar.articles") %>
-                  <% end %>
-              </li>
-              <li>
-                  <%= link_to site_books_path,
-                    class:"text-gray-50  block py-2 pl-3 pr-4 rounded  md:hover:bg-transparent
-                    md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 
-                    dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" do %>
-                      <% t("site.nav_bar.books")%>
-                    <% end %>
-              </li>
-              <li>
-                  <%= link_to site_sermons_path,
-                    class:"text-gray-50  block py-2 pl-3 pr-4 rounded  md:hover:bg-transparent
-                    md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 
-                    dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" do %>
-                    <% t("site.nav_bar.sermons")%>
-                  <% end %>
-              </li>
-              <li>
-                  <%= link_to site_authors_path,
-                    class:"text-gray-50  block py-2 pl-3 pr-4 rounded  md:hover:bg-transparent
-                    md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 
-                    dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" do %>
-                    <% t("site.nav_bar.authors")%>
-                  <% end %>
-              </li>
-          </ul>       
-      </div>
-  </div>
-</nav>
+  <nav>
+    <div class="bg-gray-50 py-8 text-center text-gray-700 dark:text-gray-50 w-2/3 text-xl h-auto shaddow-red-300  hidden lg:hidden absolute top-0 -left-4 z-10 dark:bg-gray-900 dark:border-gray-50 shadow-lg w-full" data-toggleable-target="toggleable">
+            
+      <ul class="font-xl mt-0">
+            <li>
+              <%= link_to root_path,
+                class:"text-bold  block p-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:font-bold" do %>
+                  <%= t("site.nav_bar.home_button")  %>
+              <% end %>
+          </li>
+          <li>
+              <%= link_to site_articles_path,
+                class:" block p-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:font-bold" do %>
+                  <%= t("site.nav_bar.articles") %>
+              <% end %>
+          </li>
+          <li>
+              <%= link_to site_books_path,
+                class:" block p-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:font-bold" do %>
+                  <% t("site.nav_bar.books")%>
+                <% end %>
+          </li>
+          <li>
+              <%= link_to site_sermons_path,
+                class:" block p-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:font-bold" do %>
+                <% t("site.nav_bar.sermons")%>
+              <% end %>
+          </li>
+          <li>
+              <%= link_to site_authors_path,
+                class:" block p-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:font-bold" do %>
+                <% t("site.nav_bar.authors")%>
+              <% end %>
+          </li>
+      </ul> 
+    </div>
+  </nav>
 </div>
