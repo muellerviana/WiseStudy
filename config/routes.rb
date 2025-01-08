@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :admins
   namespace :site do
     get 'home/index'
+    get 'search', to: 'search#index'
     resources :articles, only: [:index, :show]
     resources :books, only: [:index, :show]
     resources :authors, only: [:index, :show]
@@ -23,7 +24,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "site/home#index"
-
+  
   if Rails.env.development?
     mount Lookbook::Engine, at: "/lookbook"
   end

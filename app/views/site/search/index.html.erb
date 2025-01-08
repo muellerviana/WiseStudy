@@ -1,0 +1,32 @@
+<div class="relative text-gray-700 dark:text-gray-100 max-w-[80vw] mx-auto py-8">
+  <div class="w-full">
+    <% if @results.any? %>  
+      <div>
+        <% @results.each do |type, collection| %>  
+          <% collection.each do |item| %>
+            <div class="my-4">
+              <% if item.respond_to?(:display_attributes) %>
+                <div>
+                  <%= link_to "/site/#{type}/#{item.id}", class: "hover:underline text-blue-700 visited:text-purple-600" do %>
+                    <% item.display_attributes.each do |key, value| %>
+                      <p>
+                        <strong><%= key.to_s.humanize %>:</strong> <%= value %>
+                      </p>
+                    <% end %>
+                  <% end %>
+                </div>
+
+                <div class="p-2 inline-block">
+                  <p class="bg-gray-300 text-sm text-gray-600 rounded px-2">
+                    <%= type.to_s.humanize.singularize %>
+                  </p>  
+                </div>
+              <% end %>
+            </div>
+            <hr>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %> 
+  </div>
+</div>

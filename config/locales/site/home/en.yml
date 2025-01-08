@@ -13,6 +13,8 @@ en:
         title: Word Wise
         description: Find resources, Bible studies, and messages to strengthen your faith and guide your Christian walk. Everything here is centered on exalting Christ and transforming lives through Gods Word.
       articles:
+      search:
+        header: Here are the results of your search
       footer: 
         reserved: 2025 WordWise, Inc. All rights reserved.
         admin: Are you an admin?
