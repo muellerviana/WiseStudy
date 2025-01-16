@@ -5,4 +5,11 @@ class Book < ApplicationRecord
   validates_presence_of :title
   
   mount_uploader :book_cover, BookCoverUploader
+
+  def display_attributes
+    {
+      title: title,
+      summary: summary
+    }
+  end
 end

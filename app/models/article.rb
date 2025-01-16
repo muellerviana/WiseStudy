@@ -5,4 +5,11 @@ class Article < ApplicationRecord
   accepts_nested_attributes_for :authors
 
   mount_uploader :article_cover, ArticleCoverUploader
+
+  def display_attributes
+    {
+      title: title,
+      description: description
+    }
+  end
 end
