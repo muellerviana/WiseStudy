@@ -2,6 +2,7 @@
   <div class="w-full">
     <% if @results.any? %>  
       <div>
+        <h1 class="text-lg "> Aqui estão os resultados para  <span class="font-bold">'<%= @params %>'</span></h1>
         <% @results.each do |type, collection| %>  
           <% collection.each do |item| %>
             <div class="my-4">
@@ -26,6 +27,11 @@
             <hr>
           <% end %>
         <% end %>
+      </div>
+    <% else %>
+      <div class="w-full text-center">
+        <p class="text-lg">No results found for <span class="font-bold">'<%= @params %>'</span>, try something different.</p>
+        <%= image_tag 'no-results.webp', class: 'mx-auto' %>
       </div>
     <% end %> 
   </div>
