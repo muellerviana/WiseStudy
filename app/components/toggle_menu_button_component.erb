@@ -10,35 +10,40 @@
   <nav class="">
     <div class="bg-gray-50 py-8 text-gray-600 dark:text-gray-200 w-2/3 rounded-r-3xl border border-gray-400 text-lg hidden lg:hidden absolute top-0 -left-4 z-10 dark:bg-gray-800" data-toggleable-target="toggleable">
       <h1 class="mx-6 text-xl"> Word Wise </h1>     
-      <ul class="font-xl mt-0 p-6 ">
+      <ul class="text-xl mt-0 p-6 ">
             <li>
               <%= link_to root_path,
-                class:"text-bold  block p-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:font-bold" do %>
+                class:"text-bold flex p-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:font-bold" do %>
+                   <%= heroicon "home", options: { class: "text-primary-500 mr-4" } %>
                   <%= t("site.nav_bar.home_button")  %>
               <% end %>
           </li>
           <li>
               <%= link_to site_articles_path,
-                class:" block p-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:font-bold" do %>
+                class:" flex p-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:font-bold" do %>
+                  <%= heroicon "document-text", options: { class: "text-primary-500 mr-4" } %>
                   <%= t("site.nav_bar.articles") %>
               <% end %>
           </li>
           <li>
               <%= link_to site_books_path,
-                class:" block p-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:font-bold" do %>
-                  <% t("site.nav_bar.books")%>
+                class:" flex p-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:font-bold" do %>
+                  <%= heroicon "book-open", options: { class: "text-primary-500 mr-4" } %>
+                  <%= t("site.nav_bar.books")%>
                 <% end %>
           </li>
           <li>
               <%= link_to site_sermons_path,
-                class:" block p-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:font-bold" do %>
-                <% t("site.nav_bar.sermons")%>
+                class:" flex p-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:font-bold" do %>
+                  <%= heroicon "play", options: { class: "text-primary-500 mr-4" } %>
+                <%= t("site.nav_bar.sermons")%>
               <% end %>
           </li>
           <li>
               <%= link_to site_authors_path,
-                class:" block p-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:font-bold" do %>
-                <% t("site.nav_bar.authors")%>
+                class:" flex p-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:font-bold" do %>
+                <%= heroicon "pencil-square", options: { class: "text-primary-500 mr-4" } %>
+                <%= t("site.nav_bar.authors")%>
               <% end %>
           </li>
       </ul> 
