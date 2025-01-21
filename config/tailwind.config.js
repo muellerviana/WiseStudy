@@ -20,6 +20,7 @@ module.exports = {
     './app/components/**/*.{erb,rb}', // Custom components
     './src/layouts/**/*.{html,js}',
     './src/index.html',
+    './config/initializers/heroicon.rb', 
   ],
   theme: {
     extend: {

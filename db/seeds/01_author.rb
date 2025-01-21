@@ -1,0 +1,72 @@
+Author.create([
+  { name: "Augustine", 
+    last_name: "of Hippo", 
+    birth_date: "0354-11-13", 
+    death_date: "0430-08-28", 
+    nationality: "Roman Empire", 
+    website: nil 
+  },
+  { name: "Thomas", 
+    last_name: "Aquinas", 
+    birth_date: "1225-01-28", 
+    death_date: "1274-03-07", 
+    nationality: "Kingdom of Sicily", 
+    website: nil 
+  },
+  { name: "John", 
+    last_name: "Chrysostom", 
+    birth_date: "0347-01-01", 
+    death_date: "0407-09-14", 
+    nationality: "Byzantine Empire", 
+    website: nil 
+  },
+  { name: "Martin", 
+    last_name: "Luther", 
+    birth_date: "1483-11-10", 
+    death_date: "1546-02-18", 
+    nationality: "Holy Roman Empire", 
+    website: nil 
+  },
+  { name: "John", 
+    last_name: "Calvin", 
+    birth_date: "1509-07-10", 
+    death_date: "1564-05-27", 
+    nationality: "France", 
+    website: nil 
+  },
+  { name: "Ulrich", 
+    last_name: "Zwingli", 
+    birth_date: "1484-01-01", 
+    death_date: "1531-10-11", 
+    nationality: "Switzerland", 
+    website: nil 
+  },
+  { name: "William", 
+    last_name: "Carey", 
+    birth_date: "1761-08-17", 
+    death_date: "1834-06-09", 
+    nationality: "United Kingdom", 
+    website: nil 
+  },
+  { name: "David", 
+    last_name: "Livingstone", 
+    birth_date: "1813-03-19", 
+    death_date: "1873-05-01", 
+    nationality: "United Kingdom", 
+    website: nil 
+  },
+  { name: "Billy", 
+    last_name: "Graham", 
+    birth_date: "1918-11-07", 
+    death_date: "2018-02-21", 
+    nationality: "United States", 
+    website: nil 
+  },
+  { name: "Dietrich", 
+    last_name: "Bonhoeffer", 
+    birth_date: "1906-02-04", 
+    death_date: "1945-04-09", 
+    nationality: "Germany", 
+    website: nil 
+  }
+])
