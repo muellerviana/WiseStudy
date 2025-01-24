@@ -1,0 +1,14 @@
+ <div class="flex items-center">
+    <div class="w-full sm:max-w-xs">
+      <%= select_tag :locale, 
+          options_for_select(
+            [["Lang", ""], # Add an empty value for the first option
+            ['Pt', root_path(locale: 'pt-BR', url: request.original_url)],
+            ['En', root_path(locale: 'en', url: request.original_url)]],
+            selected: root_path(locale: I18n.locale, url: request.original_url) # Set the currently selected locale
+          ), 
+          class: "block w-full appearance-none px-6 pr-6 text-gray-400 bg-white border border-gray-200 rounded rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-sm dark:bg-gray-800 dark:text-white dark:border-gray-600",
+          data: { controller: "language", action: "change->language#changeLocale", languageTarget: "localeSelect" }
+      %> 
+    </div>
+</div>
