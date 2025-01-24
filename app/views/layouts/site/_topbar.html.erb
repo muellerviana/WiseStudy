@@ -1,6 +1,7 @@
 <%= render TopBarComponent.new() do |component| %>
   <%= component.with_logotype(title: "WordWise") %>
   <%= component.with_search_bar() %>
+  <%= component.with_language() %>
   <%= component.with_social_networks() %>
   <%= component.with_toggle_menu_button() %>
 <% end %>
