@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admins
   namespace :site do
+    get 'interlinear', to: 'interlinear#index'
     get 'home/index'
     get 'search', to: 'search#index'
     resources :articles, only: [:index, :show]
