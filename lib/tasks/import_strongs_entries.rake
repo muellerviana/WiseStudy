@@ -1,7 +1,11 @@
+# lib/tasks/my_task.rake
 namespace :import do
-  desc "Import Strong's entries from JSON without external gems"
-  task strongs: :environment do
-    file_path = Rails.root.join("db/data/lexicon-hebrew.json")
+  desc "Import data with optional language argument"
+  task :strongs, [:lang] => :environment do |t, args|
+
+    lang = args[:lang]
+  
+    file_path = Rails.root.join("db/data/lexicon-#{lang}.json")
     data = JSON.parse(File.read(file_path))
 
     data.each do |strongs_number, html_content|
