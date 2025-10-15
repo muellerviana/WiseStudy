@@ -2,8 +2,10 @@
 
 <div class="mt-4">
   <strong>Chapters:</strong>
-  <ul class="mt-2 list-disc list-inside">
 
-
-  </ul>
+  <div class="mt-2 grid grid-cols-6 gap-2"> <!-- 6 columns grid, adjust as needed -->
+    <% @bible_book.chapters.order(:number).each do |chapter| %>
+      <%= link_to chapter.number, admins_dashboard_bible_book_chapter_path(@bible_book, chapter), class: "bg-blue-100 text-blue-700 font-semibold rounded-lg p-2 text-center hover:bg-blue-200" %>
+    <% end %>
+  </div>
 </div>
