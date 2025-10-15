@@ -24,7 +24,9 @@ Rails.application.routes.draw do
     resources :strongs_entries
     resources :bible_books, only: [:index, :show] do
       resources :chapters, only: [:show] do
-        resources :verses, only: [:index, :show]
+        resources :verses, only: [:index, :show] do
+          resources :words
+        end
       end
     end
   end

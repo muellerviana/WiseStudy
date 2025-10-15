@@ -1,0 +1,34 @@
+<h1 class="text-3xl font-bold mb-6">Word Details</h1>
+
+<div class="p-6 bg-gray-50 rounded-2xl shadow-md">
+  <h2 class="my-4  text-3xl">
+    <strong class="text-blue-700"><%= @word.original %></strong>
+  </h2>
+  <div class="my-4 text-xl flex">
+    <p class="text-gray-500 self-end">
+      <%= "#{@book.name} #{@chapter.number}:#{@verse.number}" %>
+    </p>
+    <p class="text-gray-500 self-end mx-4 ">
+      - Position: <%= @word.position %>
+    </p>
+  </div>
+
+
+  <p class="mb-2">
+    <strong>Internal ID:</strong>
+    <%= @word.id %>
+  </p>
+
+  
+  <hr class="my-4">
+
+  <p class="mb-2">
+    <strong>Transliteration:</strong>
+    <%= @word.transliteration || "(none)" %>
+  </p>
+
+  <p>
+    <strong>Translation:</strong>
+    <%= @word.translation || "(none)" %>
+  </p>
+</div>
