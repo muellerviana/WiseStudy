@@ -1,0 +1,50 @@
+<div> 
+    <%= form_with url: site_interlinear_path, method: :get, class: "max-w-xl mx-auto mt-12 space-y-6" do %>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <!-- Book dropdown -->
+    <div class="md:col-span-1">
+      <%= select_tag :book, grouped_options_for_select({
+        "Old Testament" => [
+          "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy",
+          "Joshua", "Judges", "Ruth", "1 Samuel", "2 Samuel",
+          "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles",
+          "Ezra", "Nehemiah", "Esther", "Job", "Psalms", "Proverbs",
+          "Ecclesiastes", "Song of Solomon", "Isaiah", "Jeremiah", "Lamentations",
+          "Ezekiel", "Daniel", "Hosea", "Joel", "Amos", "Obadiah",
+          "Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah",
+          "Haggai", "Zechariah", "Malachi"
+        ],
+        "New Testament" => [
+          "Matthew", "Mark", "Luke", "John", "Acts",
+          "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians",
+          "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians",
+          "1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews",
+          "James", "1 Peter", "2 Peter", "1 John", "2 John",
+          "3 John", "Jude", "Revelation"
+        ]
+      }, params[:book].presence || "Genesis"),
+      prompt: "Select Book",
+      class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition" %>
+    </div>
+
+    <!-- Chapter -->
+    <div>
+      <%= number_field_tag :chapter, params[:chapter],
+        placeholder: "Chapter",
+        class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition" %>
+    </div>
+
+    <!-- Verse -->
+    <div>
+      <%= number_field_tag :verse, params[:verse],
+        placeholder: "Verse (optional)",
+        class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition" %>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <%= submit_tag "Search",
+      class: "px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 shadow-sm transition" %>
+  </div>
+<% end %>
+  </div>

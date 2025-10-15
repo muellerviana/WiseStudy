@@ -8,6 +8,11 @@ Rails.application.routes.draw do
     resources :books, only: [:index, :show]
     resources :authors, only: [:index, :show]
     resources :sermons, only: [:index, :show]
+    resources :bible_books, only: [:index, :show] do
+      resources :chapters, only: [:show] do
+        resources :verses, only: [:index, :show]
+      end
+    end
   end
 
   namespace :admins_dashboard do
