@@ -4,6 +4,12 @@
   <h2 class="my-4  text-3xl">
     <strong class="text-blue-700"><%= @word.original %></strong>
   </h2>
+  <p class="text-gray-500 self-end">
+    <%= @word.transliteration %>
+  </p>
+  <p class="text-gray-500 self-end">
+    <%= @word.translation %>
+  </p>
   <div class="my-4 text-xl flex">
     <p class="text-gray-500 self-end">
       <%= "#{@book.name} #{@chapter.number}:#{@verse.number}" %>
@@ -22,13 +28,18 @@
   
   <hr class="my-4">
 
-  <p class="mb-2">
-    <strong>Transliteration:</strong>
-    <%= @word.transliteration || "(none)" %>
-  </p>
+  <%= form_with(model: @word, url: admins_dashboard_bible_book_chapter_verse_word_path(@book, @chapter, @verse, @word), method: :patch, local: true) do |f| %>
+    <div class="mb-2">
+      <strong>Transliteration:</strong>
+      <%= f.text_field :transliteration, value: @word.transliteration, class: "border rounded px-2 py-1 ml-2" %>
+    </div>
+    <div class="mb-2">
+      <strong>Translation:</strong>
+      <%= f.text_field :translation, value: @word.translation, class: "border rounded px-2 py-1 ml-2" %>
+    </div>
+    <%= f.submit "Save", class: "mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition" %>
+  <% end %>
 
-  <p>
-    <strong>Translation:</strong>
-    <%= @word.translation || "(none)" %>
-  </p>
+  <%= link_to "Edit", edit_admins_dashboard_bible_book_chapter_verse_word_path(@book, @chapter, @verse, @word), 
+      class: "mt-6 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition" %>
 </div>
