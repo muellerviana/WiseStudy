@@ -1,45 +1,64 @@
-<h1 class="text-3xl font-bold mb-6">Word Details</h1>
+<div class="text-center">
+  <h1 class="text-3xl font-bold mb-6">Word Details</h1>
 
-<div class="p-6 bg-gray-50 rounded-2xl shadow-md">
-  <h2 class="my-4  text-3xl">
-    <strong class="text-blue-700"><%= @word.original %></strong>
-  </h2>
-  <p class="text-gray-500 self-end">
-    <%= @word.transliteration %>
-  </p>
-  <p class="text-gray-500 self-end">
-    <%= @word.translation %>
-  </p>
-  <div class="my-4 text-xl flex">
+  <div class="p-6 bg-gray-50 rounded-2xl shadow-md">
+    <h2 class="my-4 text-3xl">
+      <strong class="text-blue-700"><%= @word.original %></strong>
+    </h2>
     <p class="text-gray-500 self-end">
+      <%= @word.transliteration %>
+    </p>
+    <p class="text-gray-500 self-end">
+      <%= @word.translation %>
+    </p>
+    <div class="my-4 text-xl flex justify-center items-center">
+      <p class="text-gray-600 font-bold self-end">
       <%= "#{@book.name} #{@chapter.number}:#{@verse.number}" %>
-    </p>
-    <p class="text-gray-500 self-end mx-4 ">
+      </p>
+      <p class="text-gray-500 self-end mx-4">
       - Position: <%= @word.position %>
-    </p>
+      </p>
+    </div>
+
+    <div class="mb-2">
+      <strong>Internal ID:</strong>
+      <%= @word.id %>
+    </div>
+
+    <hr class="my-4">
+
+    <%= form_with(model: @word, url: admins_dashboard_bible_book_chapter_verse_word_path(@book, @chapter, @verse, @word), method: :patch, local: true) do |f| %>
+      <div class="mb-2">
+        <strong>Transliteration:</strong>
+        <%= f.text_field :transliteration, value: @word.transliteration, class: "border rounded px-2 py-1 ml-2" %>
+      </div>
+      <div class="mb-2">
+        <strong>Translation:</strong>
+        <%= f.text_field :translation, value: @word.translation, class: "border rounded px-2 py-1 ml-2" %>
+      </div>
+      <%= f.submit "Save", class: "mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition" %>
+    <% end %>
+   
+     <% if flash[:alert] %>
+      <div class="bg-red-100 border border-red-500 text-red-700 px-4 py-3 my-4 rounded relative mb-4" role="alert">
+        <strong class="font-bold">Alert:</strong>
+        <span class="block sm:inline"><%= flash[:alert] %></span>
+      </div>
+    <% end %>
   </div>
+ 
+</div>
+
+<div class="m-8">
+  <%= render 'admins_dashboard/words/verse', verse: @verse, book: @book, chapter: @chapter, word: @word %>
+</div>
 
 
-  <p class="mb-2">
-    <strong>Internal ID:</strong>
-    <%= @word.id %>
-  </p>
-
-  
-  <hr class="my-4">
-
-  <%= form_with(model: @word, url: admins_dashboard_bible_book_chapter_verse_word_path(@book, @chapter, @verse, @word), method: :patch, local: true) do |f| %>
-    <div class="mb-2">
-      <strong>Transliteration:</strong>
-      <%= f.text_field :transliteration, value: @word.transliteration, class: "border rounded px-2 py-1 ml-2" %>
-    </div>
-    <div class="mb-2">
-      <strong>Translation:</strong>
-      <%= f.text_field :translation, value: @word.translation, class: "border rounded px-2 py-1 ml-2" %>
-    </div>
-    <%= f.submit "Save", class: "mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition" %>
+<div class="flex justify-center mt-6">
+  <%= link_to admins_dashboard_bible_book_chapter_path(@book, @chapter), class: "flex items-center text-blue-600 hover:text-blue-800 transition group" do %>
+    <svg class="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+    Back to Chapter
   <% end %>
-
-  <%= link_to "Edit", edit_admins_dashboard_bible_book_chapter_verse_word_path(@book, @chapter, @verse, @word), 
-      class: "mt-6 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition" %>
 </div>
