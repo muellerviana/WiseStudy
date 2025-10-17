@@ -1,5 +1,5 @@
+<div class="px-4 py-4 font-bold text-center text-2xl align-top display-block"><%= @verse.number %></div>
 <tr class="odd:bg-white even:bg-gray-200 hover:bg-yellow-100 transition">
-  <td class="px-4 py-2 font-bold align-top w-16"><%= @verse.number %></td>
   <td class="px-4 py-2">
     <% @verse.words.each do |word| %>
       <div class="inline-block mx-3 text-center align-top">
@@ -8,13 +8,27 @@
           <div class="text-xs text-gray-400">1001</div>
 
           <!-- Original word (Greek/Hebrew) -->
-          <div class="font-semibold text-lg"><%= word.original %></div>
+          <div class="font-semibold text-2xl"><%= word.original %></div>
 
-          <!-- Transliteration -->
-          <div class="italic text-sm text-blue-700"><%= word.transliteration || "transliteration" %></div>
+          <% if word.transliteration.present? %>
+            <div class="italic text-md text-blue-700">
+              <%= word.transliteration %>   
+            </div>
+          <% else %>
+            <div class="italic text-md text-pink-700">
+              <p>missing transliteration</p>
+            </div>
+          <% end %>
 
-          <!-- Translation -->
-          <div class="text-sm text-gray-600"><%= word.translation || "translation" %></div>
+          <% if word.translation.present? %>
+            <div class="text-md text-gray-700">
+              <%= word.translation %>   
+            </div>
+          <% else %>
+            <div class="text-md text-pink-700">
+              <p>missing translation</p>
+            </div>
+          <% end %>
         <% end %>
       </div>
     <% end %>

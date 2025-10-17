@@ -17,16 +17,16 @@
             <% verse.words.each do |word| %>
               <div class="inline-block mx-3 text-center align-top">
                 <!-- Strong's number -->
-                <div class="text-xs text-gray-400">1001</div>
+                <div class="text-xs text-gray-400"><%= word.strong_number%></div>
 
                 <!-- Original word (Greek/Hebrew) -->
                 <div class="font-semibold text-lg"><%= word.original %></div>
 
                 <!-- Transliteration -->
-                <div class="italic text-sm text-blue-700"><%= word.transliteration || "transliteration" %></div>
+                <div class="italic text-sm text-blue-700"><%= word.transliteration || "missing transliteration" %></div>
 
                 <!-- Translation -->
-                <div class="text-sm text-gray-600"><%= word.translation || "translation" %></div>
+                <div class="text-sm text-gray-600"><%= word.translation || "missing translation" %></div>
               </div>
             <% end %>
           </td>
