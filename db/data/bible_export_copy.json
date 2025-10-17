@@ -1,0 +1,579 @@
+[
+  {
+    "id": 1,
+    "name": "Meu Caro Mateus",
+    "testament": "New Testament2.333",
+    "created_at": "2025-10-17T19:07:53.392Z",
+    "updated_at": "2025-10-17T19:07:53.392Z",
+    "chapters": [
+      {
+        "id": 1,
+        "number": 1,
+        "created_at": "2025-10-17T19:07:53.425Z",
+        "updated_at": "2025-10-17T19:07:53.425Z",
+        "verses": [
+          {
+            "id": 1,
+            "number": 1,
+            "created_at": "2025-10-17T19:07:53.443Z",
+            "updated_at": "2025-10-17T19:07:53.443Z",
+            "words": [
+              {
+                "id": 140509,
+                "position": 1,
+                "original": "βιβλος",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.202Z",
+                "updated_at": "2025-10-17T20:02:03.202Z"
+              },
+              {
+                "id": 140510,
+                "position": 2,
+                "original": "γενεσεως",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.207Z",
+                "updated_at": "2025-10-17T20:02:03.207Z"
+              },
+              {
+                "id": 140511,
+                "position": 3,
+                "original": "ιησου",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.212Z",
+                "updated_at": "2025-10-17T20:02:03.212Z"
+              },
+              {
+                "id": 140512,
+                "position": 4,
+                "original": "χριστου",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.216Z",
+                "updated_at": "2025-10-17T20:02:03.216Z"
+              },
+              {
+                "id": 140513,
+                "position": 5,
+                "original": "υιου",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.220Z",
+                "updated_at": "2025-10-17T20:02:03.220Z"
+              },
+              {
+                "id": 140514,
+                "position": 6,
+                "original": "δαβιδ",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.225Z",
+                "updated_at": "2025-10-17T20:02:03.225Z"
+              },
+              {
+                "id": 140515,
+                "position": 7,
+                "original": "υιου",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.229Z",
+                "updated_at": "2025-10-17T20:02:03.229Z"
+              },
+              {
+                "id": 140516,
+                "position": 8,
+                "original": "αβρααμ",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.285Z",
+                "updated_at": "2025-10-17T20:02:03.285Z"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "number": 2,
+            "created_at": "2025-10-17T19:07:53.501Z",
+            "updated_at": "2025-10-17T19:07:53.501Z",
+            "words": [
+              {
+                "id": 140517,
+                "position": 1,
+                "original": "αβρααμ",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.317Z",
+                "updated_at": "2025-10-17T20:02:03.317Z"
+              },
+              {
+                "id": 140518,
+                "position": 2,
+                "original": "εγεννησεν",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.321Z",
+                "updated_at": "2025-10-17T20:02:03.321Z"
+              },
+              {
+                "id": 140519,
+                "position": 3,
+                "original": "τον",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.325Z",
+                "updated_at": "2025-10-17T20:02:03.325Z"
+              },
+              {
+                "id": 140520,
+                "position": 4,
+                "original": "ισαακ",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.330Z",
+                "updated_at": "2025-10-17T20:02:03.330Z"
+              },
+              {
+                "id": 140521,
+                "position": 5,
+                "original": "ισαακ",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.334Z",
+                "updated_at": "2025-10-17T20:02:03.334Z"
+              },
+              {
+                "id": 140522,
+                "position": 6,
+                "original": "δε",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.338Z",
+                "updated_at": "2025-10-17T20:02:03.338Z"
+              },
+              {
+                "id": 140523,
+                "position": 7,
+                "original": "εγεννησεν",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.342Z",
+                "updated_at": "2025-10-17T20:02:03.342Z"
+              },
+              {
+                "id": 140524,
+                "position": 8,
+                "original": "τον",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.346Z",
+                "updated_at": "2025-10-17T20:02:03.346Z"
+              },
+              {
+                "id": 140525,
+                "position": 9,
+                "original": "ιακωβ",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.351Z",
+                "updated_at": "2025-10-17T20:02:03.351Z"
+              },
+              {
+                "id": 140526,
+                "position": 10,
+                "original": "ιακωβ",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.355Z",
+                "updated_at": "2025-10-17T20:02:03.355Z"
+              },
+              {
+                "id": 140527,
+                "position": 11,
+                "original": "δε",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.359Z",
+                "updated_at": "2025-10-17T20:02:03.359Z"
+              },
+              {
+                "id": 140528,
+                "position": 12,
+                "original": "εγεννησεν",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.365Z",
+                "updated_at": "2025-10-17T20:02:03.365Z"
+              },
+              {
+                "id": 140529,
+                "position": 13,
+                "original": "τον",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.369Z",
+                "updated_at": "2025-10-17T20:02:03.369Z"
+              },
+              {
+                "id": 140530,
+                "position": 14,
+                "original": "ιουδαν",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.373Z",
+                "updated_at": "2025-10-17T20:02:03.373Z"
+              },
+              {
+                "id": 140531,
+                "position": 15,
+                "original": "και",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.377Z",
+                "updated_at": "2025-10-17T20:02:03.377Z"
+              },
+              {
+                "id": 140532,
+                "position": 16,
+                "original": "τους",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.381Z",
+                "updated_at": "2025-10-17T20:02:03.381Z"
+              },
+              {
+                "id": 140533,
+                "position": 17,
+                "original": "αδελφους",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.385Z",
+                "updated_at": "2025-10-17T20:02:03.385Z"
+              },
+              {
+                "id": 140534,
+                "position": 18,
+                "original": "αυτου",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.388Z",
+                "updated_at": "2025-10-17T20:02:03.388Z"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "number": 2,
+        "created_at": "2025-10-17T19:07:53.425Z",
+        "updated_at": "2025-10-17T19:07:53.425Z",
+        "verses": [
+          {
+            "id": 1,
+            "number": 1,
+            "created_at": "2025-10-17T19:07:53.443Z",
+            "updated_at": "2025-10-17T19:07:53.443Z",
+            "words": [
+              {
+                "id": 140509,
+                "position": 1,
+                "original": "βιβλος",
+                "transliteration": "biblos",
+                "strong_number":  "G1078",
+                "translation":  "book",
+                "created_at": "2025-10-17T20:02:03.202Z",
+                "updated_at": "2025-10-17T20:02:03.202Z"
+              },
+              {
+                "id": 140510,
+                "position": 2,
+                "original": "γενεσεως",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.207Z",
+                "updated_at": "2025-10-17T20:02:03.207Z"
+              },
+              {
+                "id": 140511,
+                "position": 3,
+                "original": "ιησου",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.212Z",
+                "updated_at": "2025-10-17T20:02:03.212Z"
+              },
+              {
+                "id": 140512,
+                "position": 4,
+                "original": "χριστου",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.216Z",
+                "updated_at": "2025-10-17T20:02:03.216Z"
+              },
+              {
+                "id": 140513,
+                "position": 5,
+                "original": "υιου",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.220Z",
+                "updated_at": "2025-10-17T20:02:03.220Z"
+              },
+              {
+                "id": 140514,
+                "position": 6,
+                "original": "δαβιδ",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.225Z",
+                "updated_at": "2025-10-17T20:02:03.225Z"
+              },
+              {
+                "id": 140515,
+                "position": 7,
+                "original": "υιου",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.229Z",
+                "updated_at": "2025-10-17T20:02:03.229Z"
+              },
+              {
+                "id": 140516,
+                "position": 8,
+                "original": "αβρααμ",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.285Z",
+                "updated_at": "2025-10-17T20:02:03.285Z"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "number": 2,
+            "created_at": "2025-10-17T19:07:53.501Z",
+            "updated_at": "2025-10-17T19:07:53.501Z",
+            "words": [
+              {
+                "id": 140517,
+                "position": 1,
+                "original": "αβρααμ",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.317Z",
+                "updated_at": "2025-10-17T20:02:03.317Z"
+              },
+              {
+                "id": 140518,
+                "position": 2,
+                "original": "εγεννησεν",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.321Z",
+                "updated_at": "2025-10-17T20:02:03.321Z"
+              },
+              {
+                "id": 140519,
+                "position": 3,
+                "original": "τον",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.325Z",
+                "updated_at": "2025-10-17T20:02:03.325Z"
+              },
+              {
+                "id": 140520,
+                "position": 4,
+                "original": "ισαακ",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.330Z",
+                "updated_at": "2025-10-17T20:02:03.330Z"
+              },
+              {
+                "id": 140521,
+                "position": 5,
+                "original": "ισαακ",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.334Z",
+                "updated_at": "2025-10-17T20:02:03.334Z"
+              },
+              {
+                "id": 140522,
+                "position": 6,
+                "original": "δε",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.338Z",
+                "updated_at": "2025-10-17T20:02:03.338Z"
+              },
+              {
+                "id": 140523,
+                "position": 7,
+                "original": "εγεννησεν",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.342Z",
+                "updated_at": "2025-10-17T20:02:03.342Z"
+              },
+              {
+                "id": 140524,
+                "position": 8,
+                "original": "τον",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.346Z",
+                "updated_at": "2025-10-17T20:02:03.346Z"
+              },
+              {
+                "id": 140525,
+                "position": 9,
+                "original": "ιακωβ",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.351Z",
+                "updated_at": "2025-10-17T20:02:03.351Z"
+              },
+              {
+                "id": 140526,
+                "position": 10,
+                "original": "ιακωβ",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.355Z",
+                "updated_at": "2025-10-17T20:02:03.355Z"
+              },
+              {
+                "id": 140527,
+                "position": 11,
+                "original": "δε",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.359Z",
+                "updated_at": "2025-10-17T20:02:03.359Z"
+              },
+              {
+                "id": 140528,
+                "position": 12,
+                "original": "εγεννησεν",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.365Z",
+                "updated_at": "2025-10-17T20:02:03.365Z"
+              },
+              {
+                "id": 140529,
+                "position": 13,
+                "original": "τον",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.369Z",
+                "updated_at": "2025-10-17T20:02:03.369Z"
+              },
+              {
+                "id": 140530,
+                "position": 14,
+                "original": "ιουδαν",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.373Z",
+                "updated_at": "2025-10-17T20:02:03.373Z"
+              },
+              {
+                "id": 140531,
+                "position": 15,
+                "original": "και",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.377Z",
+                "updated_at": "2025-10-17T20:02:03.377Z"
+              },
+              {
+                "id": 140532,
+                "position": 16,
+                "original": "τους",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.381Z",
+                "updated_at": "2025-10-17T20:02:03.381Z"
+              },
+              {
+                "id": 140533,
+                "position": 17,
+                "original": "αδελφους",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.385Z",
+                "updated_at": "2025-10-17T20:02:03.385Z"
+              },
+              {
+                "id": 140534,
+                "position": 18,
+                "original": "αυτου",
+                "transliteration": null,
+                "strong_number": null,
+                "translation": null,
+                "created_at": "2025-10-17T20:02:03.388Z",
+                "updated_at": "2025-10-17T20:02:03.388Z"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
