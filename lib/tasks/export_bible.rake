@@ -19,22 +19,20 @@ namespace :export do
                     :original,
                     :transliteration,
                     :strong_number,
-                    :translation,
-                    :created_at,
-                    :updated_at
+                    :translation
                   ]
                 }
               },
               # include all verse attributes
-              only: [:id, :number, :created_at, :updated_at]
+              only: [:id, :number]
             }
           },
           # include all chapter attributes
-          only: [:id, :number, :created_at, :updated_at]
+          only: [:id, :number]
         }
       },
       # include all BibleBook attributes
-      only: [:id, :name, :testament, :created_at, :updated_at]
+      only: [:id, :name, :testament]
     )
 
     File.open("bible_export.json", "w") do |file|
