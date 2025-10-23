@@ -11,20 +11,20 @@
     </thead>
     <tbody>
       <% @verses.each do |verse| %>
-        <tr class="odd:bg-white even:bg-gray-200 transition">
-          <td class="px-4 py-2 font-bold align-top w-16"><%= verse.number %></td>
-          <td class="px-4 py-2">
+        <tr class="odd:bg-white even:bg-gray-100 p-6 transition">
+          <td class="px-4 py-2 font-bold align-top p-8 w-16"><%= verse.number %></td>
+          <td class="px-4 py-4">
             <% verse.words.each do |word| %>
-              <div class="inline-block mx-3 text-center align-top">
+              <div class="inline-block mx-2 text-center align-top">
                 <!-- Strong's number -->
-                <div class="text-xs text-gray-400"><%= word.strong_number%></div>
-
-                <!-- Original word (Greek/Hebrew) -->
-                <div class="font-semibold text-lg"><%= word.original %></div>
+                <div class="text-xs text-gray-400"><%= word.strong_number %></div>
 
                 <!-- Transliteration -->
-                <div class="italic text-sm text-blue-700"><%= word.transliteration || "missing transliteration" %></div>
+                <div class="italic text-sm text-blue-700"><%= word.transliteration %></div>
 
+                <!-- Original word (Greek/Hebrew) -->
+                <div class="font-semibold mt-4 text-lg"><%= word.original %></div>
+   
                 <!-- Translation -->
                 <div class="text-sm text-gray-600"><%= word.translation || "missing translation" %></div>
               </div>

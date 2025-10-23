@@ -16,13 +16,15 @@
             <div class="inline-block mx-3 text-center align-top">
               <%= link_to admins_dashboard_bible_book_chapter_verse_word_path(@bible_book, @chapter, verse, word), class: "block" do %>
                 <!-- Strong's number -->
-                <div class="text-xs text-gray-400">1001</div>
+                <div class="text-xs text-gray-400"><%= word.strong_number %></div>
+
+                
+                <!-- Transliteration -->
+                <div class="italic text-sm text-blue-700"><%= word.transliteration || " missing translit" %></div>
 
                 <!-- Original word (Greek/Hebrew) -->
                 <div class="font-semibold text-lg"><%= word.original %></div>
 
-                <!-- Transliteration -->
-                <div class="italic text-sm text-blue-700"><%= word.transliteration || "transliteration" %></div>
 
                 <!-- Translation -->
                 <div class="text-sm text-gray-600"><%= word.translation || "translation" %></div>
