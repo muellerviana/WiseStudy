@@ -99,3 +99,5 @@ gem "devise", "~> 4.9"
 
 #other
 gem "dockerfile-rails", ">= 1.6", :group => :development
+
+gem "openai", "~> 0.33.0"
