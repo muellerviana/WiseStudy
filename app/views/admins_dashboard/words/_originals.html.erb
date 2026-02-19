@@ -1,0 +1,16 @@
+<div class="px-4 py-4 font-bold text-center text-2xl align-top display-block"><%= @verse.number %></div>
+<div class="px-4 py-4"> 
+  <tr class="odd:bg-white even:bg-gray-200 hover:bg-yellow-100 transition">
+    <td class="px-4 py-2">
+      <% @verse.words.each do |word| %>
+        <div class="inline-block mx-3 text-center align-top">
+          <%= link_to admins_dashboard_bible_book_chapter_verse_word_path(@book, @chapter, verse, word), class: "block" do %>
+            <!-- Original word (Greek/Hebrew) -->
+            <div class="font-semibold text-2xl"><%= word.original %></div>
+
+          <% end %>
+        </div>
+      <% end %>
+    </td>
+  </tr>
+</div>

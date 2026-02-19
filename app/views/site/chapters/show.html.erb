@@ -1,39 +1,39 @@
-<div class="px-32 mx-auto">
+<div class="mx-auto sm:px-6 lg:px-8">
   
-  <h1 class="font-bold text-3xl text-center p-4"><%= @bible_book.name %> <%=  @chapter.number %>:<%= @verses.first.number %>-<%= @verses.last.number %></h1>
+  <h1 class="font-bold text-3xl text-center p-2 lg:p-4"><%= @bible_book.name %> <%=  @chapter.number %>:<%= @verses.first.number %>-<%= @verses.last.number %></h1>
 
-  <table class="min-w-full rounded-lg shadow-sm">
-    <thead class="bg-gray-100">
-      <tr>
-        <th class="px-4 py-2 text-left font-semibold text-gray-700">Verse</th>
-        <th class="px-4 py-2 text-left font-semibold text-gray-700">Words</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @verses.each do |verse| %>
-        <tr class="odd:bg-white even:bg-gray-100 p-6 transition">
-          <td class="px-4 py-2 font-bold align-top p-8 w-16"><%= verse.number %></td>
-          <td class="px-4 py-4">
-            <% verse.words.each do |word| %>
-              <div class="inline-block mx-2 text-center align-top">
-                <!-- Strong's number -->
-                <div class="text-xs text-gray-400"><%= word.strong_number %></div>
+  <table class="w-full border-collapse rounded-lg shadow-sm md:text-base">
+  <tbody>
+  <% @verses.each do |verse| %>
+    <tr class="odd:bg-white even:bg-indigo-50 transition">
+    <!-- Verse number -->
+    <td class="text-indigo-600 px-2 py-1 font-bold align-middle w-10 text-md text-center md:w-16 md:px-4 md:py-2">
+      <%= verse.number %>
+    </td>
 
-                <!-- Transliteration -->
-                <div class="italic text-sm text-blue-700"><%= word.transliteration %></div>
-
-                <!-- Original word (Greek/Hebrew) -->
-                <div class="font-semibold mt-4 text-lg"><%= word.original %></div>
-   
-                <!-- Translation -->
-                <div class="text-sm text-gray-600"><%= word.translation || "missing translation" %></div>
-              </div>
-            <% end %>
-          </td>
-        </tr>
+    <!-- Words -->
+    <td class="px-2 py-2 md:px-8 md:py-4">
+      <div class="flex py-2 flex-wrap gap-2">
+      <% verse.words.each do |word| %>
+        <div class=" flex flex-col items-center text-center">
+          <div class="text-xs"><%= word.strong_number or "strong_n"%> </div>
+          <!-- Original word -->
+          <div class="font-semibold text-lg lg:text-xl mt-1 break-words">
+            <%= word.original %>
+          </div>
+          <!-- Translation -->
+          <div class="text-md lg:text-md text-gray-600 break-words">
+            <%= word.translation || "-" %>
+          </div>
+        </div>
       <% end %>
-    </tbody>
-  </table>
+      </div>
+    </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
 
 
 </div>

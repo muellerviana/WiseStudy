@@ -1,36 +1,38 @@
 <div class="px-4 py-4 font-bold text-center text-2xl align-top display-block"><%= @verse.number %></div>
-<tr class="odd:bg-white even:bg-gray-200 hover:bg-yellow-100 transition">
-  <td class="px-4 py-2">
-    <% @verse.words.each do |word| %>
-      <div class="inline-block mx-3 text-center align-top">
-        <%= link_to admins_dashboard_bible_book_chapter_verse_word_path(@book, @chapter, verse, word), class: "block" do %>
-          <!-- Strong's number -->
-          <div class="text-xs text-gray-400">1001</div>
+<div class="px-4 py-4"> 
+  <tr class="odd:bg-white even:bg-gray-200 hover:bg-yellow-100 transition">
+    <td class="px-4 py-2">
+      <% @verse.words.each do |word| %>
+        <div class="inline-block mx-3 text-center align-top">
+          <%= link_to admins_dashboard_bible_book_chapter_verse_word_path(@book, @chapter, verse, word), class: "block" do %>
+            <!-- Strong's number -->
+            <div class="text-xs text-gray-400">1001</div>
 
-          <!-- Original word (Greek/Hebrew) -->
-          <div class="font-semibold text-2xl"><%= word.original %></div>
+            <!-- Original word (Greek/Hebrew) -->
+            <div class="font-semibold text-2xl"><%= word.original %></div>
 
-          <% if word.transliteration.present? %>
-            <div class="italic text-md text-blue-700">
-              <%= word.transliteration %>   
-            </div>
-          <% else %>
-            <div class="italic text-md text-pink-700">
-              <p>missing transliteration</p>
-            </div>
+            <% if word.transliteration.present? %>
+              <div class="italic text-md text-blue-700">
+                <%= word.transliteration %>   
+              </div>
+            <% else %>
+              <div class="italic text-md text-pink-700">
+                <p>missing transliteration</p>
+              </div>
+            <% end %>
+
+            <% if word.translation.present? %>
+              <div class="text-md text-gray-700">
+                <%= word.translation %>   
+              </div>
+            <% else %>
+              <div class="text-md text-pink-700">
+                <p>missing translation</p>
+              </div>
+            <% end %>
           <% end %>
-
-          <% if word.translation.present? %>
-            <div class="text-md text-gray-700">
-              <%= word.translation %>   
-            </div>
-          <% else %>
-            <div class="text-md text-pink-700">
-              <p>missing translation</p>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    <% end %>
-  </td>
-</tr>
+        </div>
+      <% end %>
+    </td>
+  </tr>
+</div>
