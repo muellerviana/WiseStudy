@@ -40,6 +40,6 @@ class AdminsDashboard::WordsController < AdminsDashboardController
   private
 
   def word_params
-    params.require(:word).permit(:translation, :transliteration)
+    params.require(:word).permit(:original, :strong_number, :translation, :transliteration)
   end
 end

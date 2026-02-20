@@ -55,6 +55,9 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'view_component', '~> 3.11'
+gem 'simple_form'
+gem "openai", "~> 0.33.0"
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -99,5 +102,3 @@ gem "devise", "~> 4.9"
 
 #other
 gem "dockerfile-rails", ">= 1.6", :group => :development
-
-gem "openai", "~> 0.33.0"

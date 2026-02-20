@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :admins
   namespace :site do
     get 'interlinear', to: 'interlinear#index'
+    get 'bible_books/:book_name/chapters', to: 'bible_books#chapters', as: 'bible_book_chapters'
+    get 'bible_books/:book_name/chapters/:chapter_id/verses', to: 'bible_books#verses', as: 'bible_book_verses'
     get 'home/index'
     get 'search', to: 'search#index'
     resources :articles, only: [:index, :show]

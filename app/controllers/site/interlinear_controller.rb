@@ -1,5 +1,9 @@
 class Site::InterlinearController < SiteController
   def index
+    @bible_books_grouped = BibleBook
+      .order(:id)
+      .group_by(&:testament)
+      .transform_values { |books| books.map(&:name) }
   end
 
   def show

@@ -1,10 +1,7 @@
 <div data-controller="book">
-  <%= form_with url: site_interlinear_path, method: :get,
-        class: "max-w-xl mx-auto mt-12 space-y-6" do %>
-
+  <%= form_with url: site_interlinear_path, method: :get, class: "max-w-xl mx-auto mt-12 space-y-6" do %>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-      <!-- Book -->
+      <!-- Book dropdown -->
       <div class="md:col-span-1">
         <%= select_tag :bible_book,
           grouped_options_for_select(
@@ -12,34 +9,36 @@
             params[:bible_book].presence || BibleBook.first.name
           ),
           prompt: "Select Book",
-          data: { action: "change->book#change" },
-          class: "w-full px-4 py-2 border border-gray-300 rounded-lg"
+          data: { action: "change->book#updateChapters", book_target: "book" },
+          class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
         %>
       </div>
-
-      <!-- Chapter (THIS will be replaced) -->
-      <div id="chapter_select">
-        <%= select_tag :chapter,
-          options_for_select(@chapters, params[:chapter] || 1),
-          class: "w-full px-4 py-2 border border-gray-300 rounded-lg"
+      <!-- Chapter -->
+      <div>
+        <%= select_tag :chapter, [],
+          placeholder: "Chapter",
+          data: { action: "change->book#updateVerses", book_target: "chapter" },
+          class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
         %>
       </div>
 
       <!-- Verse -->
       <div>
-        <%= number_field_tag :verse, params[:verse],
+        <%= select_tag :verse, [],
           placeholder: "Verse (optional)",
-          class: "w-full px-4 py-2 border border-gray-300 rounded-lg"
+          data: { book_target: "verse" },
+          class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
         %>
       </div>
-
     </div>
 
     <div class="text-center">
       <%= submit_tag "Search",
-        class: "px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg"
+        class: "px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 shadow-sm transition"
       %>
     </div>
-
   <% end %>
+</div>
+
+<div>
 </div>
