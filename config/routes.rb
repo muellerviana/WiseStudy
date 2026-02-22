@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get 'bible_books/:book_name/chapters/:chapter_id/verses', to: 'bible_books#verses', as: 'bible_book_verses'
     get 'home/index'
     get 'search', to: 'search#index'
+    get "interlinear/search", to: "interlinear#search", as: :interlinear_search
     resources :articles, only: [:index, :show]
     resources :books, only: [:index, :show]
     resources :authors, only: [:index, :show]

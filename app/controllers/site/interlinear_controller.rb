@@ -24,4 +24,11 @@ class Site::InterlinearController < SiteController
       @interlinear = Interlinear.where(chapter: chapter).order(:verse)
     end
   end
+
+  def search
+    book = BibleBook.find_by!(name: params[:bible_book])
+    chapter = book.chapters.find_by!(number: params[:chapter])
+
+    redirect_to site_bible_book_chapter_path(book, chapter)
+  end
 end
