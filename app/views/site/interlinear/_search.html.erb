@@ -1,6 +1,6 @@
 <div data-controller="book">
   <%= form_with url: site_interlinear_search_path, method: :get, class: "max-w-xl mx-auto mt-12 space-y-6" do %>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <!-- Book dropdown -->
       <div class="md:col-span-1">
         <%= select_tag :bible_book,
@@ -23,13 +23,14 @@
       </div>
 
       <!-- Verse -->
-      <div>
+      <%# <div>
         <%= select_tag :verse, [],
           placeholder: "Verse (optional)",
           data: { book_target: "verse" },
           class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
         %>
-      </div>
+
+
     </div>
 
     <div class="text-center">

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :sermons, only: [:index, :show]
     resources :bible_books, only: [:index, :show] do
       resources :chapters, only: [:show] do
-        resources :verses, only: [:index, :show]
+        resources :verses, only: [:show]
       end
     end
   end

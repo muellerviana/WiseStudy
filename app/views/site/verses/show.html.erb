@@ -1,0 +1,35 @@
+
+<table class="min-w-full border border-gray-300 rounded-lg shadow-sm">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="px-4 py-2 text-left font-semibold text-gray-700">Verse</th>
+      <th class="px-4 py-2 text-left font-semibold text-gray-700">Words</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr class="odd:bg-white even:bg-gray-200 hover:bg-yellow-100 transition">
+        <td class="px-4 py-2 font-bold align-top w-16"><%= @verse.number %></td>
+        <td class="px-4 py-2">
+          <% @verse.words.each do |word| %>
+            <div class="inline-block mx-3 text-center align-top">
+              
+                <!-- Strong's number -->
+                <div class="text-xs text-gray-400"><%= word.strong_number %></div>
+
+                
+                <!-- Transliteration -->
+                <div class="italic text-sm text-blue-700"><%= word.transliteration || " missing translit" %></div>
+
+                <!-- Original word (Greek/Hebrew) -->
+                <div class="font-semibold text-lg"><%= word.original %></div>
+
+
+                <!-- Translation -->
+                <div class="text-sm text-gray-600"><%= word.translation || "translation" %></div>
+             
+            </div>
+          <% end %>
+        </td>
+      </tr>
+  </tbody>
+</table>
