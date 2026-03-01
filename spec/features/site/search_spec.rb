@@ -10,7 +10,7 @@ feature 'Visit homepage' do
 
     it 'returns articles' do
       visit root_path
-      fill_in 'search-field', with: 'Teologia'
+      fill_in 'q', with: 'Teologia'
       click_on 'search-btn'    
 
       expect(current_path).to eq site_search_path
@@ -19,11 +19,11 @@ feature 'Visit homepage' do
 
     it 'does not return articles' do
       visit root_path
-      fill_in 'search-field', with: 'Recursividade'
+      fill_in 'q', with: 'Recursividade'
       click_on 'search-btn'
 
       expect(current_path).to eq site_search_path
-      expect(page).to have_content("We didn't find anything for your search.")
+      expect(page).to have_content("No results found for 'Recursividade', try something different.")
     end
   end
 end
