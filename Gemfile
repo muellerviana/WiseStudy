@@ -87,7 +87,8 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  gem 'rspec-rails', '~> 7.1'
+  gem "capybara-screenshot"
+  gem 'rspec-rails'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'faker', '~> 3.4', '>= 3.4.2'
 end
