@@ -1,0 +1,52 @@
+
+
+<div class="space-y-6">
+    <div class="bg-white shadow-md rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+      <h2 class="text-xl font-bold mb-4 text-indigo-700">Strong's Number: <%= @strongs_entry.strongs_number %></h2>
+      
+      <dl class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 text-gray-800">
+        <div>
+          <dt class="font-semibold">Original Word:</dt>
+          <dd><%= @strongs_entry.original_word %></dd>
+        </div>
+        <div>
+          <dt class="font-semibold">Transliteration:</dt>
+          <dd><%= @strongs_entry.transliteration %></dd>
+        </div>
+        <div>
+          <dt class="font-semibold">Phonetic Spelling:</dt>
+          <dd><%= @strongs_entry.phonetic_spelling %></dd>
+        </div>
+        <div>
+          <dt class="font-semibold">Part of Speech:</dt>
+          <dd><%= @strongs_entry.part_of_speech %></dd>
+        </div>
+        <div class="md:col-span-2">
+          <dt class="font-semibold">Definition:</dt>
+          <dd>Definition: <%= sanitize(@strongs_entry.definition, tags: %w[b i u a], attributes: %w[href]) %></dd>
+        </div>
+        <div class="md:col-span-2">
+          <dt class="font-semibold">Usage Examples:</dt>
+          <dd><%= sanitize(@strongs_entry.usage_examples, tags: %w[b i u a], attributes: %w[href]) %></dd>  
+        </div>
+        <div>
+          <dt class="font-semibold">Origin:</dt>
+          <dd> <%= sanitize(@strongs_entry.origin, tags: %w[b i u a], attributes: %w[href]) %></dd>
+        </div>
+        <div>
+          <dt class="font-semibold">Language:</dt>
+          <dd><%= @strongs_entry.language %></dd>
+        </div>
+        <%if @strongs_entry.lexicon_source %>
+          <div>
+            <dt class="font-semibold">Lexicon Source:</dt>
+            <dd><%= @strongs_entry.lexicon_source %></dd>
+          </div>
+        <% end %>
+        <div>
+          <dt class="font-semibold">Created At:</dt>
+          <dd><%= @strongs_entry.created_at.strftime("%B %d, %Y") %></dd>
+        </div>
+      </dl>
+    </div>
+</div>

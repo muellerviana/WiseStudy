@@ -1,0 +1,26 @@
+<table class="min-w-full border-collapse border border-gray-300 rounded-xl shadow-sm">
+  <thead class="bg-indigo-100">
+    <tr>
+      <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-indigo-700">Strong's Number</th>
+      <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-indigo-700">Original Word</th>
+      <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-indigo-700">Transliteration</th>
+      <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-indigo-700">Part of Speech</th>
+      <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-indigo-700">Language</th>
+      <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-indigo-700">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @strongs_entries.each do |entry| %>
+      <tr class="hover:bg-gray-50 transition">
+        <td class="border border-gray-300 px-4 py-2"><%= entry.strongs_number %></td>
+        <td class="border border-gray-300 px-4 py-2"><%= entry.original_word %></td>
+        <td class="border border-gray-300 px-4 py-2"><%= entry.transliteration %></td>
+        <td class="border border-gray-300 px-4 py-2"><%= entry.part_of_speech %></td>
+        <td class="border border-gray-300 px-4 py-2"><%= entry.language %></td>
+        <td class="border border-gray-300 px-4 py-2">
+          <%= link_to 'See entry', admins_dashboard_strongs_entry_path(id: entry.id), class: "text-indigo-600 hover:underline" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

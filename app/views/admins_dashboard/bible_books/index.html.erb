@@ -1,0 +1,19 @@
+<table class="min-w-full border border-gray-300 rounded-lg shadow-sm">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="text-left px-4 py-2 font-semibold text-gray-700">Book Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bible_books.each do |bible_book| %>
+      <tr class="hover:bg-gray-50 transition hover:bg-blue-400 cursor-pointer">
+        <td class="px-4 py-2 border-t text-gray-800 font-medium">
+          <%= link_to bible_book.name, admins_dashboard_bible_book_path(bible_book), class: "block w-full" %>
+        </td>
+         <td class="px-4 py-2 border-t text-gray-800 font-medium">
+          <%= bible_book.testament %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

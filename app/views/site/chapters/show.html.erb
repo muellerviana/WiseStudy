@@ -1,0 +1,68 @@
+<div class="mx-auto mx-48 sm:px-6 lg:px-8">
+  
+  <div class="flex items-center justify-center my-12 gap-4 p-2 lg:p-4">
+    <% if @chapter.number > 1 %>
+      <%= link_to "◀", site_bible_book_chapter_path(@bible_book, @chapter.id - 1), class: "text-2xl text-indigo-400 hover:text-indigo-600" %>
+    <% else %>
+      <span class="text-2xl text-gray-300">◀</span>
+    <% end %>
+    
+    <h1 class="font-bold text-3xl text-center"><%= @bible_book.name %> <%= @chapter.number %>:<%= @verses.first.number %>-<%= @verses.last.number %></h1>
+    
+    <% if @chapter.number < @bible_book.chapters.count %>
+      <%= link_to "▶", site_bible_book_chapter_path(@bible_book, @chapter.id + 1), class: "text-2xl text-indigo-400 hover:text-indigo-600" %>
+    <% else %>
+      <span class="text-2xl text-gray-300">▶</span>
+    <% end %>
+  </div>
+
+  <table class="w-full border-collapse rounded-lg shadow-sm md:text-base">
+  <tbody>
+  <% @verses.each do |verse| %>
+    <tr class="bg-white transition">
+    <!-- Verse number -->
+    <td class="text-indigo-600 px-2 py-1 font-bold align-middle w-10 text-md text-center md:w-16 md:px-4 md:py-2">
+      <%= verse.number %>
+    </td>
+
+    <!-- Words -->
+    <td class="px-2 py-2 md:px-8 md:py-4">
+      <div class="flex py-2 flex-wrap gap-2">
+      <% verse.words.each do |word| %>
+        <div class=" flex flex-col items-center text-center">
+          <!-- Original word -->
+          <div class="font-semibold text-lg lg:text-xl mt-1 break-words">
+            <%= word.original %>
+          </div>
+          <!-- Translation -->
+          <div class="text-sm text-gray-600 break-words">
+            <%= word.translation || "-" %>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<!-- FOOTER NAV -->
+  <div class="flex justify-between mt-8">
+    <div>
+      <% if @chapter.number > 1 %>
+        <%= link_to "◀ Previous Chapter",
+            site_bible_book_chapter_path(@bible_book, @chapter.id - 1),
+            class: "text-indigo-400 hover:text-indigo-600" %>
+      <% end %>
+    </div>
+
+    <div>
+      <% if @chapter.number < @bible_book.chapters.count %>
+        <%= link_to "Next Chapter ▶",
+            site_bible_book_chapter_path(@bible_book, @chapter.id + 1),
+            class: "text-indigo-400 hover:text-indigo-600" %>
+      <% end %>
+    </div>
+  </div>
+</div>

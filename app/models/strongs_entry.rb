@@ -1,0 +1,2 @@
+class StrongsEntry < ApplicationRecord
+end

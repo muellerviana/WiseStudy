@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
   devise_for :admins
   namespace :site do
+    get 'interlinear', to: 'interlinear#index'
+    get 'bible_books/:book_name/chapters', to: 'bible_books#chapters', as: 'bible_book_chapters'
+    get 'bible_books/:book_name/chapters/:chapter_id/verses', to: 'bible_books#verses', as: 'bible_book_verses'
     get 'home/index'
     get 'search', to: 'search#index'
+    get "interlinear/search", to: "interlinear#search", as: :interlinear_search
     resources :articles, only: [:index, :show]
     resources :books, only: [:index, :show]
     resources :authors, only: [:index, :show]
     resources :sermons, only: [:index, :show]
+    resources :bible_books, only: [:index, :show] do
+      resources :chapters, only: [:show] do
+        resources :verses, only: [:show]
+      end
+    end
   end
 
   namespace :admins_dashboard do
@@ -15,6 +24,14 @@ Rails.application.routes.draw do
     resources :authors
     resources :books
     resources :sermons
+    resources :strongs_entries
+    resources :bible_books, only: [:index, :show] do
+      resources :chapters, only: [:show] do
+        resources :verses, only: [:index, :show] do
+          resources :words
+        end
+      end
+    end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
